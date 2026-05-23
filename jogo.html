@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mini-jogo educativo Defensor do Agro - clique nos elementos sustentáveis e proteja o campo">
+    <meta name="keywords" content="jogo educativo, defensor do agro, mini-game, agronegócio, sustentabilidade, gamificação, agrinho, paraná">
+    <meta name="author" content="João Gabriel Sabedra Vieira">
+    <meta name="theme-color" content="#4f9d50">
+    <meta name="robots" content="index, follow">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Defensor do Agro - Mini-jogo Agrinho 2026">
+    <meta property="og:description" content="Jogo educativo sobre sustentabilidade no campo. Proteja a fazenda dos elementos danosos!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+
+    <title>Defensor do Agro - Jogo | Agro Forte - Agrinho 2026</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+    <noscript>
+        <div class="aviso-sem-js" role="alert">
+            <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
+            Para a experiência completa do Agro Forte (simulador, quiz, jogo, mapa interativo), por favor habilite o JavaScript no seu navegador. O conteúdo essencial continua acessível.
+        </div>
+    </noscript>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
+        <div class="logo-carregamento" aria-hidden="true">🌱</div>
+        <p class="texto-logo-carregamento">Agro Forte</p>
+        <p>Carregando experiência sustentável...</p>
+        <div class="barra-carregamento">
+            <div class="barra-carregamento-preenchida"></div>
+        </div>
+    </div>
+
+    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+        <span class="titulo-barra">Acessibilidade</span>
+        <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
+        <button id="btnFontePadrao" class="fonte-padrao-btn" aria-label="Fonte grande" title="Fonte grande">A</button>
+        <button id="btnFonteMaior" class="fonte-maior-btn" aria-label="Fonte extra grande" title="Fonte extra grande">A</button>
+        <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+    </aside>
+
+    <!-- OVERLAY DE BUSCA -->
+    <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="icone-busca-grande" aria-hidden="true">🔍</span>
+                <input type="text" id="inputBusca" placeholder="Buscar práticas, termos, páginas..." aria-label="Campo de busca">
+                <button class="busca-fechar" id="fecharBusca" aria-label="Fechar busca">✕</button>
+            </div>
+            <div class="busca-resultados" id="resultadosBusca"></div>
+        </div>
+    </div>
+
+    <!-- CABECALHO -->
+    <header class="cabecalho">
+        <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">🌱</span>
+                <span>Agro Forte</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="praticas.html">Práticas</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="jogo.html" class="ativo">Jogo</a></li>
+                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <button class="botao-busca" id="botaoBusca" aria-label="Buscar no site" title="Buscar">
+                        🔍
+                    </button>
+                </li>
+                <li>
+                    <button class="botao-tema" id="botaoTema" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+                        <span id="iconeTema">🌙</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="conteudoPrincipal">
+        <!-- CABECALHO DA PAGINA -->
+        <section class="pagina-cabecalho">
+            <div class="container">
+                <h1 class="fade-in">🛡️ Defensor do Agro</h1>
+                <p class="fade-in">Mini-jogo educativo: clique rapidamente nos elementos da natureza e evite que ameaças passem! Proteja a fazenda sustentável.</p>
+            </div>
+        </section>
+
+        <!-- JOGO -->
+        <section class="secao padding-secao-pequeno" aria-labelledby="tituloAreaJogo">
+            <div class="container">
+                <h2 id="tituloAreaJogo" class="apenas-leitor-tela">Área de jogo</h2>
+                <div class="jogo-container fade-in">
+                    <!-- ESTATISTICAS DO JOGO -->
+                    <div class="jogo-cabecalho">
+                        <div class="jogo-stat">
+                            <span class="rotulo">⭐ Pontos</span>
+                            <span class="valor" id="jogoPontuacao">0</span>
+                        </div>
+                        <div class="jogo-stat tempo">
+                            <span class="rotulo">⏱️ Tempo</span>
+                            <span class="valor" id="jogoTempo">60s</span>
+                        </div>
+                        <div class="jogo-stat vidas">
+                            <span class="rotulo">❤️ Vidas</span>
+                            <div class="barra-vidas" id="jogoVidas">
+                                <span class="coracao">❤️</span>
+                                <span class="coracao">❤️</span>
+                                <span class="coracao">❤️</span>
+                            </div>
+                        </div>
+                        <div class="jogo-stat">
+                            <span class="rotulo">🏆 Recorde</span>
+                            <span class="valor" id="melhorPontuacao">0</span>
+                        </div>
+                    </div>
+
+                    <!-- AREA DO JOGO -->
+                    <div class="jogo-area" id="areaJogo" role="application" aria-label="Área do jogo Defensor do Agro">
+
+                        <!-- CENARIO RURAL DE FUNDO (decorativo) -->
+                        <svg class="jogo-cenario" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                            <defs>
+                                <!-- Gradiente do céu -->
+                                <linearGradient id="gradCeu" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#87ceeb"/>
+                                    <stop offset="40%" stop-color="#b8e1f5"/>
+                                    <stop offset="70%" stop-color="#dceec5"/>
+                                    <stop offset="100%" stop-color="#a8d5a8"/>
+                                </linearGradient>
+                                <!-- Gradiente da grama -->
+                                <linearGradient id="gradGrama" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#7cb342"/>
+                                    <stop offset="50%" stop-color="#558b2f"/>
+                                    <stop offset="100%" stop-color="#33691e"/>
+                                </linearGradient>
+                                <!-- Gradiente do sol -->
+                                <radialGradient id="gradSol" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#fff59d"/>
+                                    <stop offset="60%" stop-color="#ffd54f"/>
+                                    <stop offset="100%" stop-color="#ffb300"/>
+                                </radialGradient>
+                                <!-- Gradiente das montanhas -->
+                                <linearGradient id="gradMontanha" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#90a4a0"/>
+                                    <stop offset="100%" stop-color="#607d76"/>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- CÉU -->
+                            <rect width="800" height="450" fill="url(#gradCeu)"/>
+
+                            <!-- SOL com brilho pulsante -->
+                            <g class="cenario-sol">
+                                <circle cx="660" cy="90" r="70" fill="#fff59d" opacity="0.3"/>
+                                <circle cx="660" cy="90" r="50" fill="url(#gradSol)"/>
+                                <g stroke="#ffb300" stroke-width="3" stroke-linecap="round" opacity="0.8">
+                                    <line x1="660" y1="20" x2="660" y2="35"/>
+                                    <line x1="660" y1="145" x2="660" y2="160"/>
+                                    <line x1="590" y1="90" x2="605" y2="90"/>
+                                    <line x1="715" y1="90" x2="730" y2="90"/>
+                                    <line x1="610" y1="40" x2="620" y2="50"/>
+                                    <line x1="700" y1="130" x2="710" y2="140"/>
+                                    <line x1="700" y1="50" x2="710" y2="40"/>
+                                    <line x1="610" y1="140" x2="620" y2="130"/>
+                                </g>
+                            </g>
+
+                            <!-- NUVENS animadas -->
+                            <g class="cenario-nuvem" opacity="0.95">
+                                <ellipse cx="80" cy="110" rx="50" ry="22" fill="white"/>
+                                <ellipse cx="120" cy="100" rx="40" ry="20" fill="white"/>
+                                <ellipse cx="60" cy="100" rx="35" ry="18" fill="white"/>
+                            </g>
+
+                            <g class="cenario-nuvem delay-1" opacity="0.9">
+                                <ellipse cx="280" cy="140" rx="45" ry="20" fill="white"/>
+                                <ellipse cx="310" cy="130" rx="35" ry="18" fill="white"/>
+                            </g>
+
+                            <g class="cenario-nuvem delay-2" opacity="0.85">
+                                <ellipse cx="500" cy="80" rx="55" ry="22" fill="white"/>
+                                <ellipse cx="540" cy="70" rx="40" ry="20" fill="white"/>
+                                <ellipse cx="475" cy="75" rx="30" ry="15" fill="white"/>
+                            </g>
+
+                            <!-- PÁSSARO voando -->
+                            <g class="cenario-passaro" opacity="0.7">
+                                <path d="M -50 200 q 5 -8 10 0 q 5 -8 10 0" stroke="#1a4d2e" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- MONTANHAS DISTANTES -->
+                            <path d="M 0 420 L 80 320 L 160 380 L 240 290 L 320 360 L 400 310 L 480 370 L 560 320 L 640 380 L 720 340 L 800 400 L 800 450 L 0 450 Z"
+                                  fill="url(#gradMontanha)" opacity="0.55"/>
+
+                            <!-- COLINAS MAIS PRÓXIMAS -->
+                            <path d="M 0 440 Q 200 400 400 430 Q 600 395 800 425 L 800 480 L 0 480 Z"
+                                  fill="#7cb342" opacity="0.75"/>
+
+                            <!-- ÁRVORES de fundo -->
+                            <g>
+                                <!-- Árvore 1 -->
+                                <ellipse cx="100" cy="420" rx="22" ry="35" fill="#2e7d32"/>
+                                <ellipse cx="95" cy="410" rx="15" ry="20" fill="#388e3c"/>
+                                <rect x="96" y="440" width="8" height="22" fill="#5d4037"/>
+                            </g>
+                            <g>
+                                <!-- Árvore 2 (maior) -->
+                                <ellipse cx="220" cy="410" rx="28" ry="42" fill="#1b5e20"/>
+                                <ellipse cx="215" cy="395" rx="18" ry="22" fill="#2e7d32"/>
+                                <rect x="216" y="440" width="10" height="28" fill="#5d4037"/>
+                            </g>
+                            <g>
+                                <!-- Árvore 3 -->
+                                <ellipse cx="720" cy="425" rx="20" ry="32" fill="#2e7d32"/>
+                                <rect x="717" y="445" width="8" height="22" fill="#5d4037"/>
+                            </g>
+                            <g>
+                                <!-- Árvore 4 -->
+                                <ellipse cx="380" cy="418" rx="18" ry="28" fill="#388e3c"/>
+                                <rect x="377" y="438" width="6" height="20" fill="#5d4037"/>
+                            </g>
+
+                            <!-- CELEIRO (BARN) -->
+                            <g>
+                                <!-- Corpo -->
+                                <rect x="540" y="420" width="80" height="55" fill="#c62828"/>
+                                <!-- Telhado -->
+                                <polygon points="540,420 580,395 620,420" fill="#5d4037"/>
+                                <!-- Porta -->
+                                <rect x="568" y="445" width="24" height="30" fill="#3e2723"/>
+                                <line x1="580" y1="445" x2="580" y2="475" stroke="#1a1a1a" stroke-width="1"/>
+                                <!-- Janelas -->
+                                <rect x="548" y="430" width="12" height="12" fill="#ffd54f"/>
+                                <rect x="600" y="430" width="12" height="12" fill="#ffd54f"/>
+                                <!-- Linhas decorativas -->
+                                <line x1="540" y1="420" x2="620" y2="420" stroke="#8b0000" stroke-width="2"/>
+                                <line x1="540" y1="450" x2="620" y2="450" stroke="#8b0000" stroke-width="2"/>
+                            </g>
+
+                            <!-- SILO -->
+                            <g>
+                                <rect x="630" y="425" width="22" height="50" fill="#bdbdbd"/>
+                                <ellipse cx="641" cy="425" rx="11" ry="5" fill="#9e9e9e"/>
+                                <ellipse cx="641" cy="420" rx="13" ry="5" fill="#757575"/>
+                                <rect x="635" y="450" width="12" height="3" fill="#757575"/>
+                                <rect x="635" y="460" width="12" height="3" fill="#757575"/>
+                            </g>
+
+                            <!-- GRAMADO (CHÃO) -->
+                            <rect x="0" y="450" width="800" height="150" fill="url(#gradGrama)"/>
+
+                            <!-- DETALHES DA GRAMA -->
+                            <g stroke="#1b5e20" stroke-width="2" stroke-linecap="round" fill="none">
+                                <path d="M 30 480 L 28 472 M 35 482 L 37 473"/>
+                                <path d="M 80 487 L 78 478 M 86 489 L 88 480"/>
+                                <path d="M 150 492 L 148 482 M 156 494 L 158 484"/>
+                                <path d="M 250 488 L 248 480 M 256 490 L 258 482"/>
+                                <path d="M 320 495 L 318 485 M 326 497 L 328 487"/>
+                                <path d="M 410 482 L 408 472 M 416 484 L 418 474"/>
+                                <path d="M 470 490 L 468 480 M 476 492 L 478 482"/>
+                                <path d="M 700 488 L 698 478 M 706 490 L 708 480"/>
+                                <path d="M 760 495 L 758 485 M 766 497 L 768 487"/>
+                            </g>
+
+                            <!-- FLORES SILVESTRES -->
+                            <g class="cenario-grama">
+                                <circle cx="60" cy="510" r="3" fill="#e91e63"/>
+                                <circle cx="58" cy="512" r="3" fill="#e91e63"/>
+                                <circle cx="62" cy="512" r="3" fill="#e91e63"/>
+                                <circle cx="60" cy="514" r="3" fill="#e91e63"/>
+                                <circle cx="60" cy="512" r="2" fill="#ffeb3b"/>
+                            </g>
+                            <g class="cenario-grama delay-1">
+                                <circle cx="180" cy="520" r="3" fill="#9c27b0"/>
+                                <circle cx="178" cy="522" r="3" fill="#9c27b0"/>
+                                <circle cx="182" cy="522" r="3" fill="#9c27b0"/>
+                                <circle cx="180" cy="524" r="3" fill="#9c27b0"/>
+                                <circle cx="180" cy="522" r="2" fill="#ffeb3b"/>
+                            </g>
+                            <g class="cenario-grama delay-2">
+                                <circle cx="350" cy="515" r="3" fill="#ff9800"/>
+                                <circle cx="348" cy="517" r="3" fill="#ff9800"/>
+                                <circle cx="352" cy="517" r="3" fill="#ff9800"/>
+                                <circle cx="350" cy="519" r="3" fill="#ff9800"/>
+                                <circle cx="350" cy="517" r="2" fill="#ffeb3b"/>
+                            </g>
+                            <g class="cenario-grama delay-3">
+                                <circle cx="490" cy="525" r="3" fill="#3f51b5"/>
+                                <circle cx="488" cy="527" r="3" fill="#3f51b5"/>
+                                <circle cx="492" cy="527" r="3" fill="#3f51b5"/>
+                                <circle cx="490" cy="529" r="3" fill="#3f51b5"/>
+                                <circle cx="490" cy="527" r="2" fill="#ffeb3b"/>
+                            </g>
+                            <g class="cenario-grama">
+                                <circle cx="680" cy="518" r="3" fill="#e91e63"/>
+                                <circle cx="678" cy="520" r="3" fill="#e91e63"/>
+                                <circle cx="682" cy="520" r="3" fill="#e91e63"/>
+                                <circle cx="680" cy="522" r="3" fill="#e91e63"/>
+                                <circle cx="680" cy="520" r="2" fill="#ffeb3b"/>
+                            </g>
+
+                            <!-- CERCA DE MADEIRA -->
+                            <g>
+                                <!-- Postes -->
+                                <rect x="40" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="120" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="200" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="280" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <!-- Travessas -->
+                                <rect x="35" y="548" width="250" height="4" fill="#a1887f"/>
+                                <rect x="35" y="565" width="250" height="4" fill="#a1887f"/>
+                                <!-- Postes do outro lado -->
+                                <rect x="480" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="560" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="640" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="720" y="540" width="6" height="40" fill="#8d6e63"/>
+                                <rect x="475" y="548" width="250" height="4" fill="#a1887f"/>
+                                <rect x="475" y="565" width="250" height="4" fill="#a1887f"/>
+                            </g>
+
+                            <!-- TRIGO/PLANTAÇÃO no fundo -->
+                            <g opacity="0.7">
+                                <line x1="400" y1="475" x2="400" y2="465" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="405" y1="478" x2="405" y2="468" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="410" y1="475" x2="410" y2="465" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="415" y1="478" x2="415" y2="468" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="420" y1="475" x2="420" y2="465" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="425" y1="478" x2="425" y2="468" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="430" y1="475" x2="430" y2="465" stroke="#ffc107" stroke-width="2"/>
+                                <line x1="435" y1="478" x2="435" y2="468" stroke="#ffc107" stroke-width="2"/>
+                            </g>
+                        </svg>
+
+                        <!-- Botão de pausa (aparece durante o jogo) -->
+                        <button class="botao-pausar-jogo oculto" id="botaoPausarJogo" aria-label="Pausar jogo (P ou Espaço)" title="Pausar (P ou Espaço)">
+                            ⏸️
+                        </button>
+
+                        <!-- Botão de mute (sempre visível) -->
+                        <button class="botao-mute-jogo" id="botaoMuteJogo" aria-label="Desativar som do jogo" title="Desativar som">
+                            🔊
+                        </button>
+
+                        <!-- Indicador de combo -->
+                        <div class="indicador-combo" id="indicadorCombo" aria-live="polite"></div>
+
+                        <!-- Barra de power-ups ativos -->
+                        <div class="barra-powerups" id="barraPowerUps" aria-live="polite"></div>
+
+                        <!-- OVERLAY INICIAL -->
+                        <div class="jogo-overlay" id="overlayInicio">
+                            <div class="icone-extra-grande" aria-hidden="true">🛡️</div>
+                            <h3>Defensor do Agro</h3>
+                            <p>Os elementos da natureza vão cair do céu. <strong>Clique nos elementos sustentáveis (verdes) antes que toquem o chão</strong> e evite os elementos danosos. Colete power-ups especiais e faça combos!</p>
+
+                            <!-- Seletor de dificuldade -->
+                            <div class="seletor-dificuldade" role="radiogroup" aria-label="Selecionar dificuldade">
+                                <button class="botao-dificuldade" data-dificuldade="facil" role="radio" aria-checked="false">
+                                    <span aria-hidden="true">🌱</span> Fácil
+                                </button>
+                                <button class="botao-dificuldade selecionada" data-dificuldade="medio" role="radio" aria-checked="true">
+                                    <span aria-hidden="true">🌿</span> Médio
+                                </button>
+                                <button class="botao-dificuldade" data-dificuldade="dificil" role="radio" aria-checked="false">
+                                    <span aria-hidden="true">🌳</span> Difícil
+                                </button>
+                            </div>
+
+                            <!-- Toggle do Modo Endless (Opção C) -->
+                            <div class="seletor-modo-endless">
+                                <button class="botao-dificuldade" id="botaoModoEndless" type="button" aria-pressed="false" aria-label="Ativar modo Endless (sem tempo)">
+                                    <span aria-hidden="true">♾️</span> Modo Endless
+                                </button>
+                                <p class="dica-modo-endless">
+                                    💡 No modo Endless o jogo só acaba quando você perder todas as vidas
+                                </p>
+                            </div>
+
+                            <button class="botao botao-primario" id="botaoIniciarJogo">
+                                Iniciar jogo
+                                <span aria-hidden="true">▶️</span>
+                            </button>
+                        </div>
+
+                        <!-- OVERLAY DE PAUSA -->
+                        <div class="jogo-overlay oculto" id="overlayPausa">
+                            <div class="icone-extra-grande" aria-hidden="true">⏸️</div>
+                            <h3>Jogo Pausado</h3>
+                            <div class="tela-pausa-info">
+                                <p>Pressione <kbd>P</kbd> ou <kbd>ESPAÇO</kbd> para continuar</p>
+                                <p>Ou clique no botão de pausa</p>
+                            </div>
+                        </div>
+
+                        <!-- OVERLAY FIM -->
+                        <div class="jogo-overlay escondido" id="overlayFim">
+                            <div class="icone-medio-margin" aria-hidden="true">🏁</div>
+                            <h3 id="tituloFim">Fim de jogo!</h3>
+                            <div class="pontuacao-grande">
+                                <span id="pontuacaoFinalJogo">0</span> pontos
+                            </div>
+                            <p id="mensagemFim">Você jogou bem!</p>
+
+                            <!-- Estatísticas extras da partida (Opção A) -->
+                            <div class="estatisticas-fim-jogo">
+                                <div class="stat-fim-jogo">
+                                    <span class="stat-fim-rotulo">🔥 Maior Combo</span>
+                                    <span class="stat-fim-valor" id="estatComboMax">0</span>
+                                </div>
+                                <div class="stat-fim-jogo">
+                                    <span class="stat-fim-rotulo">🌱 Objetos Coletados</span>
+                                    <span class="stat-fim-valor" id="estatObjetosColetados">0</span>
+                                </div>
+                                <div class="stat-fim-jogo">
+                                    <span class="stat-fim-rotulo">⏱️ Tempo Jogado</span>
+                                    <span class="stat-fim-valor" id="estatTempoJogado">0s</span>
+                                </div>
+                            </div>
+
+                            <div class="quiz-controles controles-centralizados">
+                                <button class="botao botao-primario" id="botaoRefazerRapido" type="button" title="Refazer com mesma dificuldade">
+                                    Refazer rápido
+                                    <span aria-hidden="true">⚡</span>
+                                </button>
+                                <button class="botao botao-secundario" id="botaoReiniciarJogo">
+                                    Mudar dificuldade
+                                    <span aria-hidden="true">🔄</span>
+                                </button>
+                                <button class="botao-compartilhar" data-tipo="jogo" type="button">
+                                    <span class="icone-compartilhar" aria-hidden="true">📤</span>
+                                    Compartilhar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TOP 5 RANKING LOCAL -->
+                    <div class="ranking-top">
+                        <h4>🏆 Top 5 — Suas melhores partidas</h4>
+                        <ol class="lista-ranking" id="listaRanking">
+                            <li class="ranking-vazio">Ainda não há recordes. Seja o primeiro!</li>
+                        </ol>
+                    </div>
+
+                    <!-- INSTRUCOES -->
+                    <div class="jogo-instrucoes">
+                        <h4>📖 Como jogar</h4>
+                        <p class="texto-descricao">
+                            Clique rapidamente em todos os elementos sustentáveis que caem na tela. Cada elemento bom dá pontos positivos. Os elementos danosos retiram pontos. Se um elemento bom tocar o chão, você perde uma vida!
+                        </p>
+
+                        <div class="lista-objetos">
+                            <div class="coluna-objetos bons">
+                                <h5>✅ Colete (clique rápido!)</h5>
+                                <ul class="lista-tipos">
+                                    <li><span class="emoji">🌱</span> Muda — +10 pts</li>
+                                    <li><span class="emoji">💧</span> Água — +10 pts</li>
+                                    <li><span class="emoji">🌳</span> Árvore — +15 pts</li>
+                                    <li><span class="emoji">🐝</span> Abelha — +15 pts</li>
+                                    <li><span class="emoji">☀️</span> Sol — +10 pts</li>
+                                    <li><span class="emoji">🌾</span> Trigo — +10 pts</li>
+                                    <li><span class="emoji">🌻</span> Girassol — +12 pts</li>
+                                    <li><span class="emoji">🐞</span> Joaninha — +15 pts</li>
+                                    <li><span class="emoji">🌽</span> Milho — +12 pts</li>
+                                    <li><span class="emoji">🥬</span> Alface — +12 pts</li>
+                                    <li><span class="emoji">🍅</span> Tomate — +14 pts</li>
+                                </ul>
+                            </div>
+
+                            <div class="coluna-objetos maus">
+                                <h5>⛔ Defenda contra (clique antes que pousem!)</h5>
+                                <ul class="lista-tipos">
+                                    <li><span class="emoji">🔥</span> Queimada — -20 pts</li>
+                                    <li><span class="emoji">🪓</span> Desmatamento — -20 pts</li>
+                                    <li><span class="emoji">☠️</span> Veneno — -25 pts</li>
+                                    <li><span class="emoji">🛢️</span> Poluição — -15 pts</li>
+                                    <li><span class="emoji">🗑️</span> Lixo — -15 pts</li>
+                                    <li><span class="emoji">💨</span> Erosão — -18 pts</li>
+                                    <li><span class="emoji">⛈️</span> Tempestade — -22 pts</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="caixa-dica-mestre">
+                            <strong class="caixa-dica-mestre-titulo">⭐ Power-ups raros (5% de chance):</strong>
+                            <ul class="lista-sem-estilo">
+                                <li><span class="emoji">⭐</span> Estrela — Pontos em dobro por 5s</li>
+                                <li><span class="emoji">⏱️</span> Relógio — Câmera lenta por 5s</li>
+                                <li><span class="emoji">💖</span> Coração — Vida extra (até 5)</li>
+                                <li><span class="emoji">🛡️</span> Escudo — Imune a danos por 5s</li>
+                            </ul>
+                        </div>
+
+                        <div class="caixa-dica-mestre">
+                            <strong class="caixa-dica-mestre-titulo">🔥 Sistema de combos:</strong>
+                            Acerte vários elementos sustentáveis seguidos para ganhar multiplicador!
+                            <ul class="lista-sem-estilo">
+                                <li>3 seguidos → <strong>2x pontos</strong></li>
+                                <li>5 seguidos → <strong>3x pontos</strong></li>
+                                <li>10 seguidos → <strong>5x pontos MEGA!</strong> 🚀</li>
+                            </ul>
+                        </div>
+
+                        <div class="caixa-dica-mestre">
+                            <strong class="caixa-dica-mestre-titulo">⌨️ Atalhos de teclado:</strong>
+                            <ul class="lista-sem-estilo">
+                                <li><kbd>P</kbd> ou <kbd>Espaço</kbd> — Pausar/continuar</li>
+                                <li><kbd>Ctrl</kbd> + <kbd>K</kbd> ou <kbd>/</kbd> — Buscar no site</li>
+                                <li><kbd>T</kbd> — Alternar tema claro/escuro</li>
+                                <li><kbd>Esc</kbd> — Fechar busca</li>
+                            </ul>
+                        </div>
+
+                        <div class="caixa-dica-mestre">
+                            <strong class="caixa-dica-mestre-titulo">💡 Dica de mestre:</strong>
+                            A velocidade aumenta com o tempo! Foque nos elementos da natureza para acumular muitos pontos. Pontuação 200+ desbloqueia confete! Suas melhores partidas ficam salvas no Top 5.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA ACAO -->
+        <section class="destaque-cta">
+            <div class="container">
+                <div class="destaque-cta-conteudo fade-in">
+                    <h2>Conhecimento + Diversão = Aprendizado</h2>
+                    <p>Cada elemento que você defendeu representa um desafio real do agro brasileiro. Que tal aprofundar o conhecimento sobre essas práticas?</p>
+                    <a href="praticas.html" class="botao">
+                        Ver práticas sustentáveis
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="rodape-coluna">
+                    <div class="rodape-logo">
+                        <span aria-hidden="true">🌱</span>
+                        <span>Agro Forte</span>
+                    </div>
+                    <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
+                    <div class="rodape-autoria">
+                        <strong class="rodape-autoria-titulo">✍️ Autoria</strong>
+                        <span><strong>Estudante:</strong> João Gabriel Sabedra Vieira</span>
+                        <span><strong>Série:</strong> 1º C — ADM</span>
+                        <span><strong>Orientação:</strong> Prof. Allison Fernando dos Santos</span>
+                        <span><strong>Escola:</strong> Colégio Cívico-Militar Douradina</span>
+                        <span><strong>Município:</strong> Douradina — PR</span>
+                    </div>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="praticas.html">Práticas</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="jogo.html">Jogo</a></li>
+                        <li><a href="glossario.html">Glossário</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Concurso</h3>
+                    <ul>
+                        <li>Agrinho 2026</li>
+                        <li>Categoria: Programação</li>
+                        <li>Subcategoria 3: Front-End</li>
+                        <li>SENAR-PR e SEED-PR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-creditos">
+                <p>&copy; 2026 — Projeto desenvolvido por <strong>João Gabriel Sabedra Vieira</strong> | Colégio Cívico-Militar Douradina | HTML, CSS e JavaScript puro</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato e compartilhe suas ideias sobre agronegócio sustentável">
+    <meta name="keywords" content="contato, agrinho, agro forte, agronegócio, sustentabilidade, formulário, fale conosco, paraná">
+    <meta name="author" content="João Gabriel Sabedra Vieira">
+    <meta name="theme-color" content="#4f9d50">
+    <meta name="robots" content="index, follow">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contato | Agro Forte">
+    <meta property="og:description" content="Compartilhe suas ideias, dúvidas ou experiências sobre o agro sustentável.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+
+    <title>Contato | Agro Forte - Agrinho 2026</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+    <noscript>
+        <div class="aviso-sem-js" role="alert">
+            <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
+            Para a experiência completa do Agro Forte (simulador, quiz, jogo, mapa interativo), por favor habilite o JavaScript no seu navegador. O conteúdo essencial continua acessível.
+        </div>
+    </noscript>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
+        <div class="logo-carregamento" aria-hidden="true">🌱</div>
+        <p class="texto-logo-carregamento">Agro Forte</p>
+        <p>Carregando experiência sustentável...</p>
+        <div class="barra-carregamento">
+            <div class="barra-carregamento-preenchida"></div>
+        </div>
+    </div>
+
+    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+        <span class="titulo-barra">Acessibilidade</span>
+        <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
+        <button id="btnFontePadrao" class="fonte-padrao-btn" aria-label="Fonte grande" title="Fonte grande">A</button>
+        <button id="btnFonteMaior" class="fonte-maior-btn" aria-label="Fonte extra grande" title="Fonte extra grande">A</button>
+        <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+    </aside>
+
+    <!-- OVERLAY DE BUSCA -->
+    <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="icone-busca-grande" aria-hidden="true">🔍</span>
+                <input type="text" id="inputBusca" placeholder="Buscar práticas, termos, páginas..." aria-label="Campo de busca">
+                <button class="busca-fechar" id="fecharBusca" aria-label="Fechar busca">✕</button>
+            </div>
+            <div class="busca-resultados" id="resultadosBusca"></div>
+        </div>
+    </div>
+
+    <!-- CABECALHO -->
+    <header class="cabecalho">
+        <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">🌱</span>
+                <span>Agro Forte</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="praticas.html">Práticas</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="contato.html" class="ativo">Contato</a></li>
+                <li>
+                    <button class="botao-busca" id="botaoBusca" aria-label="Buscar no site" title="Buscar">
+                        🔍
+                    </button>
+                </li>
+                <li>
+                    <button class="botao-tema" id="botaoTema" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+                        <span id="iconeTema">🌙</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="conteudoPrincipal">
+        <!-- CABECALHO DA PAGINA -->
+        <section class="contato-cabecalho">
+            <div class="container">
+                <span class="contato-icone-decorativo fade-in" aria-hidden="true">✉️</span>
+                <h1 class="fade-in">Fale Conosco</h1>
+                <p class="fade-in">Tem uma sugestão, dúvida ou quer compartilhar uma experiência sustentável? Mande sua mensagem e vamos conversar sobre o agro do futuro!</p>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="secao">
+            <div class="container">
+                <div class="container-contato">
+                    <!-- INFORMACOES DE CONTATO -->
+                    <aside class="info-contato fade-in">
+                        <h2>Informações</h2>
+
+                        <div class="info-item">
+                            <div class="icone" aria-hidden="true">📧</div>
+                            <div>
+                                <strong>E-mail do Concurso</strong>
+                                <p>agrinhoprogramacao<br>@escola.pr.gov.br</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icone" aria-hidden="true">🌐</div>
+                            <div>
+                                <strong>Site oficial</strong>
+                                <p>sistemafaep.org.br/agrinho</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icone" aria-hidden="true">🏛️</div>
+                            <div>
+                                <strong>Realização</strong>
+                                <p>SENAR-PR e SEED-PR</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icone" aria-hidden="true">📅</div>
+                            <div>
+                                <strong>Edição</strong>
+                                <p>Agrinho 2026<br>Categoria Programação</p>
+                            </div>
+                        </div>
+
+                        <div class="caixa-info">
+                            <strong class="caixa-info-titulo">💡 Dica</strong>
+                            <p class="caixa-info-texto-pequeno">Suas ideias podem inspirar mudanças reais no agronegócio brasileiro. Compartilhe!</p>
+                        </div>
+                    </aside>
+
+                    <!-- FORMULARIO -->
+                    <form class="formulario fade-in" id="formularioContato" novalidate>
+                        <h2>Envie sua mensagem</h2>
+
+                        <div class="aviso-formulario">
+                            <span class="icone-info" aria-hidden="true">📧</span>
+                            <div>
+                                <strong>Como funciona</strong>
+                                Ao enviar, abrirá seu cliente de email (Gmail, Outlook, etc.) com a mensagem pronta para você confirmar o envio. Nenhum dado é enviado automaticamente para servidores.
+                            </div>
+                        </div>
+
+                        <div class="campo-formulario-rico" id="campoFormularioNome">
+                            <label for="campoNome">
+                                <span class="icone-campo" aria-hidden="true">👤</span>
+                                Nome completo <span class="obrigatorio" aria-hidden="true">*</span>
+                            </label>
+                            <input type="text" id="campoNome" name="nome" required minlength="3" autocomplete="name" placeholder="Como devemos te chamar?">
+                            <span class="mensagem-erro" id="erroNome">Por favor, informe seu nome (mínimo 3 caracteres).</span>
+                        </div>
+
+                        <div class="campo-formulario-rico" id="campoFormularioEmail">
+                            <label for="campoEmail">
+                                <span class="icone-campo" aria-hidden="true">📧</span>
+                                E-mail <span class="obrigatorio" aria-hidden="true">*</span>
+                            </label>
+                            <input type="email" id="campoEmail" name="email" required autocomplete="email" placeholder="seu@email.com">
+                            <span class="mensagem-erro" id="erroEmail">Por favor, informe um e-mail válido.</span>
+                        </div>
+
+                        <div class="campo-formulario-rico" id="campoFormularioAssunto">
+                            <label for="campoAssunto">
+                                <span class="icone-campo" aria-hidden="true">🏷️</span>
+                                Assunto <span class="obrigatorio" aria-hidden="true">*</span>
+                            </label>
+                            <select id="campoAssunto" name="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="duvida">❓ Dúvida sobre o concurso</option>
+                                <option value="sugestao">💡 Sugestão de prática sustentável</option>
+                                <option value="experiencia">🌱 Compartilhar experiência</option>
+                                <option value="parceria">🤝 Proposta de parceria</option>
+                                <option value="outro">✨ Outro assunto</option>
+                            </select>
+                            <span class="mensagem-erro" id="erroAssunto">Por favor, selecione um assunto.</span>
+                        </div>
+
+                        <div class="campo-formulario-rico" id="campoFormularioMensagem">
+                            <label for="campoMensagem">
+                                <span class="icone-campo" aria-hidden="true">💬</span>
+                                Mensagem <span class="obrigatorio" aria-hidden="true">*</span>
+                            </label>
+                            <textarea id="campoMensagem" name="mensagem" required minlength="10" placeholder="Conte sua ideia, dúvida ou experiência..." rows="5"></textarea>
+                            <span class="mensagem-erro" id="erroMensagem">A mensagem precisa ter pelo menos 10 caracteres.</span>
+                        </div>
+
+                        <div class="campo-formulario-rico" id="campoFormularioConcordo">
+                            <label class="card-aceite" for="campoConcordo">
+                                <input type="checkbox" id="campoConcordo" required>
+                                <span class="texto-aceite">
+                                    <strong>Concordo</strong> que minhas informações (nome e e-mail) sejam usadas <strong>apenas para responder</strong> esta mensagem.
+                                </span>
+                            </label>
+                            <span class="mensagem-erro" id="erroConcordo">Você precisa concordar para enviar a mensagem.</span>
+                        </div>
+
+                        <button type="submit" class="botao botao-primario botao-enviar-grande">
+                            Enviar mensagem
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                        <div class="mensagem-sucesso" id="mensagemSucesso">
+                            <strong>✓ Mensagem preparada com sucesso!</strong>
+                            <p>Seu cliente de email (Gmail, Outlook, etc.) vai abrir com a mensagem pronta para enviar. Basta clicar em "Enviar" no seu cliente. 📧</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- FAQ -->
+                <div class="bloco-faq">
+                    <div class="secao-titulo fade-in">
+                        <span>Dúvidas frequentes</span>
+                        <h2>Perguntas comuns</h2>
+                        <p>Algumas das dúvidas mais frequentes sobre o concurso e o tema do projeto</p>
+                    </div>
+
+                    <div class="grid-praticas">
+                        <article class="card-pratica fade-in">
+                            <div class="icone" aria-hidden="true">❓</div>
+                            <h3>O que é o Agrinho?</h3>
+                            <p>Concurso anual promovido pelo SENAR-PR e SEED-PR para alunos da rede pública estadual do Paraná, incentivando o aprendizado sobre o campo e tecnologia.</p>
+                        </article>
+
+                        <article class="card-pratica fade-in">
+                            <div class="icone" aria-hidden="true">📝</div>
+                            <h3>Qual o tema de 2026?</h3>
+                            <p>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente". O foco é mostrar como produzir alimentos sem destruir a natureza.</p>
+                        </article>
+
+                        <article class="card-pratica fade-in">
+                            <div class="icone" aria-hidden="true">🏆</div>
+                            <h3>Como participar?</h3>
+                            <p>Estudantes do Ensino Médio matriculados nas disciplinas de programação podem desenvolver projetos em HTML, CSS e JavaScript dentro do tema.</p>
+                        </article>
+
+                        <article class="card-pratica fade-in">
+                            <div class="icone" aria-hidden="true">🌍</div>
+                            <h3>Por que o tema importa?</h3>
+                            <p>O Brasil é um gigante agrícola e ambiental. Equilibrar produção e preservação garante alimento, renda no campo e qualidade de vida nas cidades.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="rodape-coluna">
+                    <div class="rodape-logo">
+                        <span aria-hidden="true">🌱</span>
+                        <span>Agro Forte</span>
+                    </div>
+                    <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
+                    <div class="rodape-autoria">
+                        <strong class="rodape-autoria-titulo">✍️ Autoria</strong>
+                        <span><strong>Estudante:</strong> João Gabriel Sabedra Vieira</span>
+                        <span><strong>Série:</strong> 1º C — ADM</span>
+                        <span><strong>Orientação:</strong> Prof. Allison Fernando dos Santos</span>
+                        <span><strong>Escola:</strong> Colégio Cívico-Militar Douradina</span>
+                        <span><strong>Município:</strong> Douradina — PR</span>
+                    </div>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="praticas.html">Práticas</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="jogo.html">Jogo</a></li>
+                        <li><a href="glossario.html">Glossário</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Concurso</h3>
+                    <ul>
+                        <li>Agrinho 2026</li>
+                        <li>Categoria: Programação</li>
+                        <li>Subcategoria 3: Front-End</li>
+                        <li>SENAR-PR e SEED-PR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-creditos">
+                <p>&copy; 2026 — Projeto desenvolvido por <strong>João Gabriel Sabedra Vieira</strong> | Colégio Cívico-Militar Douradina | HTML, CSS e JavaScript puro</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

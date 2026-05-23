@@ -1,0 +1,8 @@
+# robots.txt - Agro Forte - Agrinho 2026
+# Permite indexacao completa do site por mecanismos de busca
+
+User-agent: *
+Allow: /
+
+# Sitemap (substituir pela URL absoluta apos publicar no GitHub Pages)
+# Exemplo: Sitemap: https://seuusuario.github.io/agro-forte/sitemap.xml

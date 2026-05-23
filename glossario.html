@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glossário com termos técnicos sobre agronegócio sustentável e meio ambiente">
+    <meta name="keywords" content="glossário, termos técnicos, agronegócio, sustentabilidade, agricultura, meio ambiente, dicionário rural, paraná">
+    <meta name="author" content="João Gabriel Sabedra Vieira">
+    <meta name="theme-color" content="#4f9d50">
+    <meta name="robots" content="index, follow">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Glossário | Agro Forte">
+    <meta property="og:description" content="24 termos técnicos sobre agronegócio sustentável: agroecologia, bioinsumos, ILPF, sequestro de carbono e muito mais.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+
+    <title>Glossário | Agro Forte - Agrinho 2026</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+    <noscript>
+        <div class="aviso-sem-js" role="alert">
+            <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
+            Para a experiência completa do Agro Forte (simulador, quiz, jogo, mapa interativo), por favor habilite o JavaScript no seu navegador. O conteúdo essencial continua acessível.
+        </div>
+    </noscript>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
+        <div class="logo-carregamento" aria-hidden="true">🌱</div>
+        <p class="texto-logo-carregamento">Agro Forte</p>
+        <p>Carregando experiência sustentável...</p>
+        <div class="barra-carregamento">
+            <div class="barra-carregamento-preenchida"></div>
+        </div>
+    </div>
+
+    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+        <span class="titulo-barra">Acessibilidade</span>
+        <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
+        <button id="btnFontePadrao" class="fonte-padrao-btn" aria-label="Fonte grande" title="Fonte grande">A</button>
+        <button id="btnFonteMaior" class="fonte-maior-btn" aria-label="Fonte extra grande" title="Fonte extra grande">A</button>
+        <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+    </aside>
+
+    <!-- OVERLAY DE BUSCA -->
+    <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="icone-busca-grande" aria-hidden="true">🔍</span>
+                <input type="text" id="inputBusca" placeholder="Buscar práticas, termos, páginas..." aria-label="Campo de busca">
+                <button class="busca-fechar" id="fecharBusca" aria-label="Fechar busca">✕</button>
+            </div>
+            <div class="busca-resultados" id="resultadosBusca"></div>
+        </div>
+    </div>
+
+    <!-- CABECALHO -->
+    <header class="cabecalho">
+        <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">🌱</span>
+                <span>Agro Forte</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="praticas.html">Práticas</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="glossario.html" class="ativo">Glossário</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <button class="botao-busca" id="botaoBusca" aria-label="Buscar no site" title="Buscar">
+                        🔍
+                    </button>
+                </li>
+                <li>
+                    <button class="botao-tema" id="botaoTema" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+                        <span id="iconeTema">🌙</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="conteudoPrincipal">
+        <!-- CABECALHO DA PAGINA -->
+        <section class="pagina-cabecalho">
+            <div class="container">
+                <h1 class="fade-in">Glossário do Agro Sustentável</h1>
+                <p class="fade-in">Dicionário com os principais termos técnicos sobre agronegócio, meio ambiente e sustentabilidade. Clique em um termo para ver sua definição.</p>
+            </div>
+        </section>
+
+        <!-- GLOSSARIO -->
+        <section class="secao" aria-labelledby="tituloListaTermos">
+            <div class="container">
+                <h2 id="tituloListaTermos" class="apenas-leitor-tela">Lista de termos do glossário</h2>
+                <!-- BUSCA NO GLOSSARIO -->
+                <div class="busca-glossario fade-in">
+                    <input type="text" id="buscaGlossario" placeholder="Pesquisar termo..." aria-label="Buscar no glossário">
+                </div>
+
+                <!-- FILTRO POR LETRA -->
+                <div class="filtro-alfabeto fade-in" role="group" aria-label="Filtro por letra inicial">
+                    <button class="letra-filtro ativa" data-letra="todas">Todas</button>
+                    <button class="letra-filtro" data-letra="A">A</button>
+                    <button class="letra-filtro" data-letra="B">B</button>
+                    <button class="letra-filtro" data-letra="C">C</button>
+                    <button class="letra-filtro" data-letra="D">D</button>
+                    <button class="letra-filtro" data-letra="E">E</button>
+                    <button class="letra-filtro" data-letra="F">F</button>
+                    <button class="letra-filtro" data-letra="I">I</button>
+                    <button class="letra-filtro" data-letra="M">M</button>
+                    <button class="letra-filtro" data-letra="P">P</button>
+                    <button class="letra-filtro" data-letra="R">R</button>
+                    <button class="letra-filtro" data-letra="S">S</button>
+                </div>
+
+                <!-- LISTA DE TERMOS -->
+                <div class="lista-glossario fade-in" id="listaGlossario">
+
+                    <!-- A -->
+                    <article class="termo-glossario" data-letra="A" data-titulo="Agricultura de Precisão">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">A</span>
+                                <h3>Agricultura de Precisão</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Sistema de manejo agrícola que utiliza tecnologias como GPS, drones, sensores e mapas digitais para aplicar a quantidade exata de água, fertilizantes e defensivos em cada parte da lavoura. Reduz desperdícios e aumenta a produtividade.</p>
+                                <span class="categoria-tag">Tecnologia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="A" data-titulo="Agroecologia">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">A</span>
+                                <h3>Agroecologia</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Ciência que aplica princípios ecológicos ao manejo de sistemas agrícolas. Busca produzir alimentos respeitando a natureza, com mínimo uso de insumos químicos, valorizando a biodiversidade e os saberes tradicionais.</p>
+                                <span class="categoria-tag">Ciência</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="A" data-titulo="APP - Área de Preservação Permanente">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">A</span>
+                                <h3>APP — Área de Preservação Permanente</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Áreas de proteção obrigatória conforme o Código Florestal brasileiro: matas ciliares (margens de rios), topos de morros, encostas íngremes e nascentes. Têm função ambiental essencial e não podem ser desmatadas.</p>
+                                <span class="categoria-tag">Legislação</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- B -->
+                    <article class="termo-glossario" data-letra="B" data-titulo="Bioeconomia">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">B</span>
+                                <h3>Bioeconomia</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Modelo econômico baseado no uso sustentável de recursos biológicos renováveis. Inclui produção de alimentos, energia, fármacos e materiais a partir da floresta em pé, agricultura sustentável e biotecnologia.</p>
+                                <span class="categoria-tag">Economia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="B" data-titulo="Bioinsumos">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">B</span>
+                                <h3>Bioinsumos</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Produtos de origem biológica usados na agricultura — microrganismos benéficos, fungos, bactérias e extratos vegetais. Substituem agroquímicos no controle de pragas e doenças, fortalecendo as plantas naturalmente.</p>
+                                <span class="categoria-tag">Insumos</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="B" data-titulo="Biodigestor">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">B</span>
+                                <h3>Biodigestor</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Equipamento que processa resíduos orgânicos (estercos, restos vegetais) em ambiente sem oxigênio. Produz biogás, usado como energia, e biofertilizante natural. Transforma poluição em recurso.</p>
+                                <span class="categoria-tag">Energia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- C -->
+                    <article class="termo-glossario" data-letra="C" data-titulo="Carbono Neutro">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">C</span>
+                                <h3>Carbono Neutro</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Estado em que a quantidade de gás carbônico (CO2) emitida é compensada pela quantidade absorvida ou removida da atmosfera. Fazendas carbono neutro plantam árvores e adotam práticas que sequestram carbono.</p>
+                                <span class="categoria-tag">Clima</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="C" data-titulo="Crédito de Carbono">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">C</span>
+                                <h3>Crédito de Carbono</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Certificado que comprova a redução ou remoção de uma tonelada de CO2 da atmosfera. Pode ser vendido a empresas que precisam compensar suas emissões. Nova fonte de renda para produtores rurais sustentáveis.</p>
+                                <span class="categoria-tag">Mercado</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="C" data-titulo="Cerrado">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">C</span>
+                                <h3>Cerrado</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Segundo maior bioma do Brasil, conhecido como "berço das águas" por abrigar nascentes das principais bacias hidrográficas. Tem grande importância agrícola e abriga rica biodiversidade adaptada ao clima de duas estações.</p>
+                                <span class="categoria-tag">Bioma</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- D -->
+                    <article class="termo-glossario" data-letra="D" data-titulo="Desertificação">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">D</span>
+                                <h3>Desertificação</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Processo de degradação do solo em regiões secas que perde a capacidade de produzir vida vegetal. Causada pelo uso inadequado da terra. Práticas sustentáveis revertem o processo.</p>
+                                <span class="categoria-tag">Problema</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- E -->
+                    <article class="termo-glossario" data-letra="E" data-titulo="Erosão">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">E</span>
+                                <h3>Erosão</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Desgaste e remoção das camadas férteis do solo pela ação da chuva, do vento ou do uso inadequado. Solo em movimento polui rios e perde fertilidade. O plantio direto e curvas de nível são técnicas eficazes para preveni-la.</p>
+                                <span class="categoria-tag">Problema</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- F -->
+                    <article class="termo-glossario" data-letra="F" data-titulo="Fotovoltaico">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">F</span>
+                                <h3>Fotovoltaico</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Tecnologia que converte luz solar diretamente em eletricidade através de painéis solares. No campo, são usados para alimentar bombas, irrigação, iluminação e a sede da propriedade — fonte limpa e econômica.</p>
+                                <span class="categoria-tag">Energia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- I -->
+                    <article class="termo-glossario" data-letra="I" data-titulo="ILPF - Integração Lavoura-Pecuária-Floresta">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">I</span>
+                                <h3>ILPF — Integração Lavoura-Pecuária-Floresta</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Sistema produtivo que combina, na mesma área, plantação de grãos (lavoura), criação de animais (pecuária) e árvores (floresta). Diversifica renda, recupera solos, aumenta produtividade e reduz emissões de carbono.</p>
+                                <span class="categoria-tag">Sistema</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="I" data-titulo="Irrigação Inteligente">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">I</span>
+                                <h3>Irrigação Inteligente</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Sistemas de irrigação automatizados com sensores que medem a umidade do solo em tempo real. A água só é liberada quando necessário e na quantidade certa, podendo economizar até 40% de água.</p>
+                                <span class="categoria-tag">Tecnologia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- M -->
+                    <article class="termo-glossario" data-letra="M" data-titulo="Mata Ciliar">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">M</span>
+                                <h3>Mata Ciliar</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Vegetação nativa que cresce nas margens de rios, córregos e ao redor de nascentes. Protege a água da contaminação, evita erosão e abriga fauna. Sua preservação é obrigatória pelo Código Florestal.</p>
+                                <span class="categoria-tag">Ecossistema</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="M" data-titulo="Manejo Integrado de Pragas">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">M</span>
+                                <h3>Manejo Integrado de Pragas (MIP)</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Estratégia que combina controle biológico, cultural, físico e químico para manejar pragas com mínimo impacto. Usa inimigos naturais (joaninhas, vespas) antes de recorrer a químicos.</p>
+                                <span class="categoria-tag">Manejo</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- P -->
+                    <article class="termo-glossario" data-letra="P" data-titulo="Plantio Direto">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">P</span>
+                                <h3>Plantio Direto</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Sistema em que se planta diretamente sobre os restos da cultura anterior, sem arar a terra. Mantém a estrutura do solo, reduz erosão em até 90% e preserva microrganismos benéficos. Brasil é referência mundial.</p>
+                                <span class="categoria-tag">Técnica</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="P" data-titulo="Polinização">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">P</span>
+                                <h3>Polinização</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Transferência do pólen de uma flor a outra, essencial para produção de frutos e sementes. Realizada principalmente por abelhas, vespas e outros insetos. Aumenta a produtividade de mais de 70% das culturas mundiais.</p>
+                                <span class="categoria-tag">Biologia</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- R -->
+                    <article class="termo-glossario" data-letra="R" data-titulo="Reserva Legal">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">R</span>
+                                <h3>Reserva Legal</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Porcentagem de cada propriedade rural que deve ser mantida com vegetação nativa, conforme o Código Florestal. Varia de 20% a 80% conforme a região (maior na Amazônia). Protege a biodiversidade.</p>
+                                <span class="categoria-tag">Legislação</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="R" data-titulo="Rotação de Culturas">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">R</span>
+                                <h3>Rotação de Culturas</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Prática de alternar culturas diferentes na mesma área ao longo do tempo. Cada planta extrai e devolve nutrientes diferentes ao solo, quebra ciclos de pragas e diversifica a renda.</p>
+                                <span class="categoria-tag">Técnica</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- S -->
+                    <article class="termo-glossario" data-letra="S" data-titulo="Sequestro de Carbono">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">S</span>
+                                <h3>Sequestro de Carbono</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Processo de captura do CO2 da atmosfera pelo solo, plantas e árvores. Florestas em pé, agrofloresta e plantio direto retêm grandes quantidades de carbono, ajudando a mitigar as mudanças climáticas.</p>
+                                <span class="categoria-tag">Clima</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="S" data-titulo="Sistema Agroflorestal (SAF)">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">S</span>
+                                <h3>Sistema Agroflorestal (SAF)</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Modelo de cultivo que combina árvores nativas, frutíferas, lavouras e até criação de animais no mesmo espaço. Inspirado em ecossistemas naturais, recupera áreas degradadas e produz alimentos diversos.</p>
+                                <span class="categoria-tag">Sistema</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="termo-glossario" data-letra="S" data-titulo="Sustentabilidade">
+                        <button class="termo-cabecalho" aria-expanded="false">
+                            <div class="termo-titulo">
+                                <span class="termo-icone">S</span>
+                                <h3>Sustentabilidade</h3>
+                            </div>
+                            <span class="seta" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="termo-conteudo">
+                            <div class="termo-conteudo-interno">
+                                <p>Capacidade de atender às necessidades do presente sem comprometer a habilidade das gerações futuras de atender às suas próprias necessidades. Equilíbrio entre as dimensões econômica, social e ambiental.</p>
+                                <span class="categoria-tag">Conceito</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- MENSAGEM DE VAZIO -->
+                <div class="glossario-vazio oculto" id="glossarioVazio">
+                    <div class="icone-grande" aria-hidden="true">🔍</div>
+                    <h3 class="titulo-placeholder">Nenhum termo encontrado</h3>
+                    <p>Tente buscar com outras palavras ou clique em "Todas" para ver o glossário completo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA ACAO -->
+        <section class="destaque-cta">
+            <div class="container">
+                <div class="destaque-cta-conteudo fade-in">
+                    <h2>Quer ver essas práticas em ação?</h2>
+                    <p>Agora que você conhece os termos, que tal experimentar nosso simulador de fazenda sustentável e aplicar esses conceitos na prática?</p>
+                    <a href="simulador.html" class="botao">
+                        Ir para o simulador
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="rodape-coluna">
+                    <div class="rodape-logo">
+                        <span aria-hidden="true">🌱</span>
+                        <span>Agro Forte</span>
+                    </div>
+                    <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
+                    <div class="rodape-autoria">
+                        <strong class="rodape-autoria-titulo">✍️ Autoria</strong>
+                        <span><strong>Estudante:</strong> João Gabriel Sabedra Vieira</span>
+                        <span><strong>Série:</strong> 1º C — ADM</span>
+                        <span><strong>Orientação:</strong> Prof. Allison Fernando dos Santos</span>
+                        <span><strong>Escola:</strong> Colégio Cívico-Militar Douradina</span>
+                        <span><strong>Município:</strong> Douradina — PR</span>
+                    </div>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="praticas.html">Práticas</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="jogo.html">Jogo</a></li>
+                        <li><a href="glossario.html">Glossário</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Concurso</h3>
+                    <ul>
+                        <li>Agrinho 2026</li>
+                        <li>Categoria: Programação</li>
+                        <li>Subcategoria 3: Front-End</li>
+                        <li>SENAR-PR e SEED-PR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-creditos">
+                <p>&copy; 2026 — Projeto desenvolvido por <strong>João Gabriel Sabedra Vieira</strong> | Colégio Cívico-Militar Douradina | HTML, CSS e JavaScript puro</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

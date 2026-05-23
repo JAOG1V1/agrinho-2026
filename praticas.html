@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Práticas sustentáveis no agronegócio: plantio direto, rotação de culturas, energia renovável e mais">
+    <meta name="keywords" content="práticas sustentáveis, plantio direto, rotação de culturas, energia renovável, solo, água, biodiversidade, agronegócio, paraná">
+    <meta name="author" content="João Gabriel Sabedra Vieira">
+    <meta name="theme-color" content="#4f9d50">
+    <meta name="robots" content="index, follow">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Práticas Sustentáveis | Agro Forte">
+    <meta property="og:description" content="12 práticas que estão transformando o agro brasileiro: plantio direto, irrigação inteligente, agrofloresta, energia solar e muito mais.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+
+    <title>Práticas Sustentáveis | Agro Forte - Agrinho 2026</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+    <noscript>
+        <div class="aviso-sem-js" role="alert">
+            <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
+            Para a experiência completa do Agro Forte (simulador, quiz, jogo, mapa interativo), por favor habilite o JavaScript no seu navegador. O conteúdo essencial continua acessível.
+        </div>
+    </noscript>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
+        <div class="logo-carregamento" aria-hidden="true">🌱</div>
+        <p class="texto-logo-carregamento">Agro Forte</p>
+        <p>Carregando experiência sustentável...</p>
+        <div class="barra-carregamento">
+            <div class="barra-carregamento-preenchida"></div>
+        </div>
+    </div>
+
+    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+        <span class="titulo-barra">Acessibilidade</span>
+        <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
+        <button id="btnFontePadrao" class="fonte-padrao-btn" aria-label="Fonte grande" title="Fonte grande">A</button>
+        <button id="btnFonteMaior" class="fonte-maior-btn" aria-label="Fonte extra grande" title="Fonte extra grande">A</button>
+        <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+    </aside>
+
+    <!-- OVERLAY DE BUSCA -->
+    <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="icone-busca-grande" aria-hidden="true">🔍</span>
+                <input type="text" id="inputBusca" placeholder="Buscar práticas, termos, páginas..." aria-label="Campo de busca">
+                <button class="busca-fechar" id="fecharBusca" aria-label="Fechar busca">✕</button>
+            </div>
+            <div class="busca-resultados" id="resultadosBusca"></div>
+        </div>
+    </div>
+
+    <!-- CABECALHO -->
+    <header class="cabecalho">
+        <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">🌱</span>
+                <span>Agro Forte</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="praticas.html" class="ativo">Práticas</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <button class="botao-busca" id="botaoBusca" aria-label="Buscar no site" title="Buscar">
+                        🔍
+                    </button>
+                </li>
+                <li>
+                    <button class="botao-tema" id="botaoTema" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+                        <span id="iconeTema">🌙</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="conteudoPrincipal">
+        <!-- CABECALHO DA PAGINA -->
+        <section class="pagina-cabecalho">
+            <div class="container">
+                <h1 class="fade-in">Práticas Sustentáveis</h1>
+                <p class="fade-in">Filtre, explore e descubra as principais técnicas que estão transformando a agricultura brasileira em modelo de sustentabilidade.</p>
+            </div>
+        </section>
+
+        <!-- FILTROS -->
+        <section class="secao">
+            <div class="container">
+                <div class="secao-titulo fade-in">
+                    <span>Explore por categoria</span>
+                    <h2>Soluções para cada desafio</h2>
+                    <p>Use os filtros abaixo para encontrar práticas específicas para diferentes áreas do agronegócio sustentável</p>
+                </div>
+
+                <div class="quiz-controles filtros-praticas-centralizados">
+                    <button class="botao botao-secundario filtro-pratica ativo" data-filtro="todos">
+                        Todas
+                    </button>
+                    <button class="botao botao-secundario filtro-pratica" data-filtro="solo">
+                        Solo
+                    </button>
+                    <button class="botao botao-secundario filtro-pratica" data-filtro="agua">
+                        Água
+                    </button>
+                    <button class="botao botao-secundario filtro-pratica" data-filtro="energia">
+                        Energia
+                    </button>
+                    <button class="botao botao-secundario filtro-pratica" data-filtro="biodiversidade">
+                        Biodiversidade
+                    </button>
+                </div>
+
+                <!-- GRID DE PRATICAS -->
+                <div class="grid-praticas" id="gridPraticas">
+                    <article class="card-pratica fade-in" id="plantio-direto" data-categoria="solo">
+                        <div class="icone" aria-hidden="true">🌾</div>
+                        <h3>Plantio Direto</h3>
+                        <p>Em vez de arar a terra, o agricultor planta diretamente sobre os restos da cultura anterior. O solo fica protegido da chuva e do sol, mantendo a umidade e os microrganismos vivos.</p>
+                        <p><strong>Benefício:</strong> Reduz a erosão em até 90% e aumenta a matéria orgânica do solo ano após ano.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" id="rotacao" data-categoria="solo">
+                        <div class="icone" aria-hidden="true">🔄</div>
+                        <h3>Rotação de Culturas</h3>
+                        <p>Plantar culturas diferentes em sequência na mesma área. Por exemplo: soja no verão, milho safrinha, depois feijão. Cada planta nutre e protege o solo de uma forma diferente.</p>
+                        <p><strong>Benefício:</strong> Quebra ciclos de pragas, melhora a fertilidade e diversifica a renda do produtor.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" id="agua" data-categoria="agua">
+                        <div class="icone" aria-hidden="true">💧</div>
+                        <h3>Irrigação Inteligente</h3>
+                        <p>Sensores no solo medem em tempo real a quantidade de água disponível. A irrigação só é acionada quando realmente necessário, na medida exata para cada planta.</p>
+                        <p><strong>Benefício:</strong> Economia de até 40% no consumo de água e aumento da produtividade.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="agua">
+                        <div class="icone" aria-hidden="true">🌊</div>
+                        <h3>Captação de Água da Chuva</h3>
+                        <p>Sistemas de coleta e armazenamento da água da chuva em cisternas, açudes e barraginhas. A água captada é usada para consumo animal, irrigação e necessidades básicas.</p>
+                        <p><strong>Benefício:</strong> Reduz a dependência de poços e protege as nascentes da propriedade.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" id="agrofloresta" data-categoria="biodiversidade">
+                        <div class="icone" aria-hidden="true">🌳</div>
+                        <h3>Sistema Agroflorestal</h3>
+                        <p>Combinação harmoniosa de árvores nativas, frutíferas e cultivos agrícolas no mesmo espaço. Inspirada em sistemas naturais, gera múltiplas colheitas em diferentes épocas.</p>
+                        <p><strong>Benefício:</strong> Recupera áreas degradadas, sequestra carbono e gera renda diversificada.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" id="energia" data-categoria="energia">
+                        <div class="icone" aria-hidden="true">☀️</div>
+                        <h3>Energia Solar Rural</h3>
+                        <p>Painéis fotovoltaicos instalados em currais, galpões e áreas improdutivas geram eletricidade limpa para máquinas, iluminação e bombeamento de água.</p>
+                        <p><strong>Benefício:</strong> Reduz custos de energia em até 95% e torna a propriedade autossuficiente.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="energia">
+                        <div class="icone" aria-hidden="true">🔥</div>
+                        <h3>Biogás e Biodigestores</h3>
+                        <p>Resíduos de animais e vegetais são processados em biodigestores e transformados em biogás, usado para cozinhar, gerar energia ou abastecer veículos da fazenda.</p>
+                        <p><strong>Benefício:</strong> Transforma resíduo em recurso e reduz emissões de gás metano.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" id="pecuaria" data-categoria="biodiversidade">
+                        <div class="icone" aria-hidden="true">🐄</div>
+                        <h3>Pastagem Rotacionada</h3>
+                        <p>O pasto é dividido em piquetes e o gado se alimenta em apenas um por vez, permitindo a recuperação dos demais. As plantas crescem mais saudáveis e o solo descansa.</p>
+                        <p><strong>Benefício:</strong> Aumenta em até 3 vezes a capacidade de produção por hectare sem desmatar.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="biodiversidade">
+                        <div class="icone" aria-hidden="true">🐝</div>
+                        <h3>Polinização e Apicultura</h3>
+                        <p>Manter abelhas e plantas atrativas para polinizadores ao redor das lavouras melhora a produtividade de frutas, café, soja e muitas outras culturas.</p>
+                        <p><strong>Benefício:</strong> Aumento de produtividade e produção extra de mel para o produtor.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="solo">
+                        <div class="icone" aria-hidden="true">🦠</div>
+                        <h3>Bioinsumos</h3>
+                        <p>Microrganismos benéficos como fungos e bactérias substituem fertilizantes químicos e pesticidas, fortalecendo as plantas de forma natural e segura.</p>
+                        <p><strong>Benefício:</strong> Reduz custos com insumos, protege a saúde do solo e elimina contaminação química.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="agua">
+                        <div class="icone" aria-hidden="true">🌿</div>
+                        <h3>Mata Ciliar</h3>
+                        <p>Faixas de vegetação nativa preservadas ao redor de rios, córregos e nascentes. Funcionam como filtro natural e habitat para a vida silvestre.</p>
+                        <p><strong>Benefício:</strong> Protege a qualidade da água e cumpre o Código Florestal brasileiro.</p>
+                    </article>
+
+                    <article class="card-pratica fade-in" data-categoria="energia">
+                        <div class="icone" aria-hidden="true">💨</div>
+                        <h3>Energia Eólica</h3>
+                        <p>Aerogeradores aproveitam os ventos do campo, principalmente em regiões abertas, gerando energia limpa que pode ser usada na propriedade ou vendida à rede.</p>
+                        <p><strong>Benefício:</strong> Renda extra para o produtor que arrenda áreas para parques eólicos.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA ACAO -->
+        <section class="destaque-cta">
+            <div class="container">
+                <div class="destaque-cta-conteudo fade-in">
+                    <h2>Conhecimento que transforma</h2>
+                    <p>Que tal testar o que você aprendeu sobre o agro sustentável? Faça nosso quiz interativo e descubra o quanto sabe sobre o equilíbrio entre produção e meio ambiente.</p>
+                    <a href="quiz.html" class="botao">
+                        Fazer o quiz agora
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="rodape-coluna">
+                    <div class="rodape-logo">
+                        <span aria-hidden="true">🌱</span>
+                        <span>Agro Forte</span>
+                    </div>
+                    <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
+                    <div class="rodape-autoria">
+                        <strong class="rodape-autoria-titulo">✍️ Autoria</strong>
+                        <span><strong>Estudante:</strong> João Gabriel Sabedra Vieira</span>
+                        <span><strong>Série:</strong> 1º C — ADM</span>
+                        <span><strong>Orientação:</strong> Prof. Allison Fernando dos Santos</span>
+                        <span><strong>Escola:</strong> Colégio Cívico-Militar Douradina</span>
+                        <span><strong>Município:</strong> Douradina — PR</span>
+                    </div>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="praticas.html">Práticas</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="jogo.html">Jogo</a></li>
+                        <li><a href="glossario.html">Glossário</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Concurso</h3>
+                    <ul>
+                        <li>Agrinho 2026</li>
+                        <li>Categoria: Programação</li>
+                        <li>Subcategoria 3: Front-End</li>
+                        <li>SENAR-PR e SEED-PR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-creditos">
+                <p>&copy; 2026 — Projeto desenvolvido por <strong>João Gabriel Sabedra Vieira</strong> | Colégio Cívico-Militar Douradina | HTML, CSS e JavaScript puro</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# EditorConfig — Padronização de estilo de código
+# Projeto Agro Forte — Agrinho 2026
+# https://editorconfig.org/
+
+# Define que este é o arquivo raiz de configuração
+root = true
+
+# Padrão para TODOS os arquivos do projeto
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 120
+
+# Arquivos HTML, CSS e JS — indentação de 4 espaços (padrão do projeto)
+[*.{html,css,js}]
+indent_style = space
+indent_size = 4
+
+# Arquivos JSON — indentação de 4 espaços
+[*.json]
+indent_style = space
+indent_size = 4
+
+# Arquivos XML — indentação de 4 espaços
+[*.xml]
+indent_style = space
+indent_size = 4
+
+# Arquivos Markdown — não remover espaços do final (eles têm significado)
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# Arquivos SVG
+[*.svg]
+indent_size = 4
+
+# robots.txt
+[robots.txt]
+trim_trailing_whitespace = true

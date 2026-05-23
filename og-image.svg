@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="gradFundo" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4f9d50"/>
+            <stop offset="50%" stop-color="#1a4d2e"/>
+            <stop offset="100%" stop-color="#0f2c1a"/>
+        </linearGradient>
+        <linearGradient id="gradSol" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff59d"/>
+            <stop offset="100%" stop-color="#d4a017"/>
+        </linearGradient>
+        <linearGradient id="gradTexto" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#fff59d"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Fundo gradiente -->
+    <rect width="1200" height="630" fill="url(#gradFundo)"/>
+
+    <!-- Elementos decorativos circulares -->
+    <circle cx="100" cy="100" r="180" fill="rgba(212, 160, 23, 0.1)"/>
+    <circle cx="1100" cy="530" r="200" fill="rgba(168, 213, 168, 0.1)"/>
+
+    <!-- Sol decorativo -->
+    <g transform="translate(960, 130)">
+        <circle r="70" fill="url(#gradSol)"/>
+        <g stroke="#d4a017" stroke-width="5" stroke-linecap="round">
+            <line x1="0" y1="-90" x2="0" y2="-105"/>
+            <line x1="0" y1="90" x2="0" y2="105"/>
+            <line x1="-90" y1="0" x2="-105" y2="0"/>
+            <line x1="90" y1="0" x2="105" y2="0"/>
+            <line x1="-63" y1="-63" x2="-74" y2="-74"/>
+            <line x1="63" y1="63" x2="74" y2="74"/>
+            <line x1="63" y1="-63" x2="74" y2="-74"/>
+            <line x1="-63" y1="63" x2="-74" y2="74"/>
+        </g>
+    </g>
+
+    <!-- Folhas decorativas -->
+    <g transform="translate(150, 480)">
+        <ellipse cx="0" cy="0" rx="40" ry="80" fill="#a8d5a8" transform="rotate(-30)"/>
+        <ellipse cx="0" cy="0" rx="40" ry="80" fill="#4f9d50" transform="rotate(30)"/>
+    </g>
+
+    <!-- Logo central (planta brotando) -->
+    <g transform="translate(600, 240)">
+        <!-- Vaso/solo -->
+        <ellipse cx="0" cy="60" rx="80" ry="15" fill="#5d4037" opacity="0.5"/>
+        <!-- Caule -->
+        <line x1="0" y1="60" x2="0" y2="-20" stroke="#2e7d32" stroke-width="8" stroke-linecap="round"/>
+        <!-- Folhas -->
+        <ellipse cx="-25" cy="0" rx="22" ry="45" fill="#4f9d50" transform="rotate(-25)"/>
+        <ellipse cx="25" cy="-5" rx="22" ry="45" fill="#66bb6a" transform="rotate(25)"/>
+        <ellipse cx="0" cy="-25" rx="20" ry="40" fill="#388e3c"/>
+    </g>
+
+    <!-- Título Principal -->
+    <text x="600" y="400" font-family="Georgia, serif" font-size="86" font-weight="bold" fill="url(#gradTexto)" text-anchor="middle">
+        Agro Forte
+    </text>
+
+    <!-- Subtítulo -->
+    <text x="600" y="460" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="rgba(255, 255, 255, 0.95)" text-anchor="middle">
+        Futuro sustentável
+    </text>
+
+    <!-- Linha decorativa -->
+    <line x1="500" y1="490" x2="700" y2="490" stroke="#d4a017" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Tag do concurso -->
+    <text x="600" y="540" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="#fff59d" text-anchor="middle" letter-spacing="3">
+        AGRINHO 2026
+    </text>
+
+    <!-- Subtítulo extra -->
+    <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="rgba(255, 255, 255, 0.85)" text-anchor="middle">
+        Equilíbrio entre produção e meio ambiente
+    </text>
+</svg>

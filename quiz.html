@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz interativo sobre agronegócio sustentável. Teste seus conhecimentos sobre o equilíbrio entre produção e meio ambiente">
+    <meta name="keywords" content="quiz, perguntas e respostas, agronegócio, sustentabilidade, conhecimento, educação, agrinho, agricultura, paraná">
+    <meta name="author" content="João Gabriel Sabedra Vieira">
+    <meta name="theme-color" content="#4f9d50">
+    <meta name="robots" content="index, follow">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Quiz Interativo | Agro Forte">
+    <meta property="og:description" content="Teste seu conhecimento com 15 perguntas sobre agronegócio sustentável e ganhe sua medalha!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="og-image.svg">
+
+    <title>Quiz | Agro Forte - Agrinho 2026</title>
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234f9d50'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' fill='white'%3E🌱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+    <noscript>
+        <div class="aviso-sem-js" role="alert">
+            <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
+            Para a experiência completa do Agro Forte (simulador, quiz, jogo, mapa interativo), por favor habilite o JavaScript no seu navegador. O conteúdo essencial continua acessível.
+        </div>
+    </noscript>
+
+    <!-- TELA DE CARREGAMENTO -->
+    <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
+        <div class="logo-carregamento" aria-hidden="true">🌱</div>
+        <p class="texto-logo-carregamento">Agro Forte</p>
+        <p>Carregando experiência sustentável...</p>
+        <div class="barra-carregamento">
+            <div class="barra-carregamento-preenchida"></div>
+        </div>
+    </div>
+
+    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
+        <span class="titulo-barra">Acessibilidade</span>
+        <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
+        <button id="btnFontePadrao" class="fonte-padrao-btn" aria-label="Fonte grande" title="Fonte grande">A</button>
+        <button id="btnFonteMaior" class="fonte-maior-btn" aria-label="Fonte extra grande" title="Fonte extra grande">A</button>
+        <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
+    </aside>
+
+    <!-- OVERLAY DE BUSCA -->
+    <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
+        <div class="busca-container">
+            <div class="busca-cabecalho">
+                <span class="icone-busca-grande" aria-hidden="true">🔍</span>
+                <input type="text" id="inputBusca" placeholder="Buscar práticas, termos, páginas..." aria-label="Campo de busca">
+                <button class="busca-fechar" id="fecharBusca" aria-label="Fechar busca">✕</button>
+            </div>
+            <div class="busca-resultados" id="resultadosBusca"></div>
+        </div>
+    </div>
+
+    <!-- CABECALHO -->
+    <header class="cabecalho">
+        <nav class="nav-principal" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <span class="logo-icone" aria-hidden="true">🌱</span>
+                <span>Agro Forte</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="praticas.html">Práticas</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="quiz.html" class="ativo">Quiz</a></li>
+                <li><a href="jogo.html">Jogo</a></li>
+                <li><a href="glossario.html">Glossário</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li>
+                    <button class="botao-busca" id="botaoBusca" aria-label="Buscar no site" title="Buscar">
+                        🔍
+                    </button>
+                </li>
+                <li>
+                    <button class="botao-tema" id="botaoTema" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+                        <span id="iconeTema">🌙</span>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="menu-mobile" id="menuMobile" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="conteudoPrincipal">
+        <!-- CABECALHO DA PAGINA -->
+        <section class="pagina-cabecalho">
+            <div class="container">
+                <h1 class="fade-in">Quiz Interativo</h1>
+                <p class="fade-in">Teste seu conhecimento sobre agronegócio sustentável e descubra o quanto você sabe sobre o equilíbrio entre produção e meio ambiente.</p>
+            </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section class="secao">
+            <div class="container">
+                <div class="container-quiz fade-in" id="containerQuiz">
+                    <!-- TELA INICIAL -->
+                    <div id="telaInicial">
+                        <div class="tela-inicial-centro">
+                            <div class="icone-grande-emoji" aria-hidden="true">🧠</div>
+                            <h2 class="titulo-tela-inicial">Pronto para o desafio?</h2>
+                            <p class="descricao-tela-inicial">São <strong>10 perguntas</strong> sobre o tema "Agro forte, futuro sustentável". Para cada acerto você ganha pontos, e ao final descobrirá seu nível de conhecimento sobre sustentabilidade no campo.</p>
+                            <div class="bloco-instrucoes">
+                                <strong class="bloco-instrucoes-titulo">Como funciona:</strong>
+                                <ul class="lista-sem-estilo">
+                                    <li>✓ Cada pergunta tem 4 opções</li>
+                                    <li>✓ Você verá o feedback após cada resposta</li>
+                                    <li>✓ No final, descobre sua pontuação total</li>
+                                    <li>✓ Pode refazer o quiz quantas vezes quiser</li>
+                                </ul>
+                            </div>
+                            <button class="botao botao-primario" id="botaoIniciarQuiz">
+                                Iniciar quiz
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TELA DE PERGUNTAS -->
+                    <div id="telaPerguntas" class="oculto">
+                        <div class="quiz-progresso">
+                            <span class="quiz-progresso-texto" id="textoProgresso">1 / 10</span>
+                            <div class="quiz-progresso-barra">
+                                <div class="quiz-progresso-preenchido" id="barraProgresso"></div>
+                            </div>
+                            <span class="quiz-progresso-texto" id="textoPontuacao">0 pts</span>
+                        </div>
+
+                        <button class="botao-voz" id="botaoOuvirPergunta" type="button" aria-label="Ouvir pergunta em voz alta">
+                            <span class="icone-voz" aria-hidden="true">🔊</span>
+                            <span class="texto-voz">Ouvir pergunta</span>
+                        </button>
+
+                        <div class="quiz-pergunta" id="textoPergunta">
+                            Pergunta aparece aqui
+                        </div>
+
+                        <div class="quiz-opcoes" id="opcoesQuiz">
+                            <!-- Opções inseridas via JavaScript -->
+                        </div>
+
+                        <div class="quiz-feedback" id="feedbackQuiz">
+                            <strong id="feedbackTitulo"></strong>
+                            <span id="feedbackTexto"></span>
+                        </div>
+
+                        <div class="quiz-controles">
+                            <button class="botao botao-secundario" id="botaoReiniciar">
+                                Reiniciar quiz
+                            </button>
+                            <button class="botao botao-primario oculto" id="botaoProxima">
+                                Próxima pergunta
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TELA DE RESULTADO -->
+                    <div class="quiz-resultado" id="telaResultado">
+                        <div class="resultado-emoji" id="resultadoEmoji" aria-hidden="true">🎉</div>
+                        <h2 id="resultadoTitulo">Parabéns!</h2>
+                        <div class="resultado-pontuacao" id="resultadoPontuacao">0 / 100</div>
+                        <p class="resultado-mensagem" id="resultadoMensagem">Você completou o quiz!</p>
+
+                        <div class="bloco-resumo">
+                            <strong class="bloco-resumo-titulo">Resumo do desempenho:</strong>
+                            <div class="linha-resumo">
+                                <span>Acertos:</span>
+                                <strong id="resumoAcertos">0</strong>
+                            </div>
+                            <div class="linha-resumo">
+                                <span>Erros:</span>
+                                <strong id="resumoErros">0</strong>
+                            </div>
+                            <div class="linha-resumo">
+                                <span>Aproveitamento:</span>
+                                <strong id="resumoAproveitamento">0%</strong>
+                            </div>
+                        </div>
+
+                        <div class="quiz-controles controles-centralizados">
+                            <button class="botao botao-primario" id="botaoRefazer">
+                                Refazer quiz
+                                <span aria-hidden="true">🔄</span>
+                            </button>
+                            <button class="botao-compartilhar" data-tipo="quiz" type="button">
+                                <span class="icone-compartilhar" aria-hidden="true">📤</span>
+                                Compartilhar
+                            </button>
+                            <a href="praticas.html" class="botao botao-secundario">
+                                Ver práticas sustentáveis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPE -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="rodape-coluna">
+                    <div class="rodape-logo">
+                        <span aria-hidden="true">🌱</span>
+                        <span>Agro Forte</span>
+                    </div>
+                    <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
+                    <div class="rodape-autoria">
+                        <strong class="rodape-autoria-titulo">✍️ Autoria</strong>
+                        <span><strong>Estudante:</strong> João Gabriel Sabedra Vieira</span>
+                        <span><strong>Série:</strong> 1º C — ADM</span>
+                        <span><strong>Orientação:</strong> Prof. Allison Fernando dos Santos</span>
+                        <span><strong>Escola:</strong> Colégio Cívico-Militar Douradina</span>
+                        <span><strong>Município:</strong> Douradina — PR</span>
+                    </div>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="praticas.html">Práticas</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="jogo.html">Jogo</a></li>
+                        <li><a href="glossario.html">Glossário</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-coluna">
+                    <h3>Concurso</h3>
+                    <ul>
+                        <li>Agrinho 2026</li>
+                        <li>Categoria: Programação</li>
+                        <li>Subcategoria 3: Front-End</li>
+                        <li>SENAR-PR e SEED-PR</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-creditos">
+                <p>&copy; 2026 — Projeto desenvolvido por <strong>João Gabriel Sabedra Vieira</strong> | Colégio Cívico-Militar Douradina | HTML, CSS e JavaScript puro</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
+        <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
