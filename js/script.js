@@ -2321,8 +2321,8 @@ function inicializarJogo() {
         botaoReiniciarJogo.addEventListener('click', iniciarJogo);
     }
 
-    // Botões de dificuldade
-    const botoesDificuldade = document.querySelectorAll('.botao-dificuldade');
+    // Botões de dificuldade (EXCLUI o Modo Endless, que tem a mesma classe mas é toggle independente)
+    const botoesDificuldade = document.querySelectorAll('.botao-dificuldade:not(#botaoModoEndless)');
     botoesDificuldade.forEach(function(botao) {
         botao.addEventListener('click', function() {
             botoesDificuldade.forEach(function(b) { b.classList.remove('selecionada'); });
