@@ -5818,3 +5818,215 @@ body.tema-escuro .mapa-divisas-estados {
         text-decoration: underline;
     }
 }
+
+/* ===============================================================
+   REDE DE SEGURANÇA RESPONSIVA — Cobertura universal
+   Garantias para QUALQUER dispositivo (320px até 4K)
+   =============================================================== */
+
+/* GLOBAL: previne overflow horizontal em qualquer tela */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* GLOBAL: imagens e SVGs sempre dentro do container */
+img, svg, video, picture, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL: tabelas com scroll horizontal em telas pequenas */
+table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+@media (min-width: 769px) {
+    table {
+        display: table;
+    }
+}
+
+/* ============================================
+   TABLET PORTRAIT (max 1024px) — iPads, tablets
+   ============================================ */
+@media (max-width: 1024px) {
+    /* Reduz padding lateral em telas menores */
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    /* Simulador: grid de fazenda mais compacto */
+    .fazenda-grade {
+        gap: 0.5rem;
+    }
+
+    /* Hero: menos altura em tablets */
+    .hero {
+        min-height: 70vh;
+    }
+}
+
+/* ============================================
+   MOBILE GRANDE (max 600px) — celulares modernos
+   ============================================ */
+@media (max-width: 600px) {
+    /* Container com menos padding */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Reduz padding das seções */
+    .secao {
+        padding: 2.5rem 0;
+    }
+
+    /* Hero: empilha verticalmente */
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero-conteudo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .hero-botoes {
+        flex-wrap: wrap;
+    }
+
+    .hero-botoes .botao {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    /* Rodapé: empilha em 1 coluna */
+    .grid-rodape {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .rodape-autoria {
+        text-align: left;
+    }
+
+    /* Formulários: full width em mobile */
+    input, select, textarea, .campo-formulario {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Cards de pratica responsivos */
+    .lista-praticas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   MOBILE PEQUENO (max 400px) — celulares antigos
+   ============================================ */
+@media (max-width: 400px) {
+    /* Padding ainda menor */
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    /* Títulos menores */
+    h1 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    h2 {
+        font-size: clamp(1.25rem, 5vw, 1.75rem);
+    }
+
+    /* Botões menores */
+    .botao {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* Cabeçalho compacto */
+    .cabecalho {
+        padding: 0.75rem 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Fazenda simulador: 2 colunas em telas mini */
+    .fazenda-grade {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        aspect-ratio: 2/6;
+    }
+
+    /* Cabeçalho do jogo: stats compactas */
+    .jogo-cabecalho {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .jogo-stat {
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   MOBILE EXTRA-PEQUENO (max 360px) — iPhone SE, antigos
+   ============================================ */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+    .hero-botoes .botao {
+        width: 100%;
+    }
+
+    /* Cards menores */
+    .card-pratica {
+        padding: 1.25rem;
+    }
+}
+
+/* ============================================
+   DESKTOP GRANDE (min 1440px) — monitores grandes
+   ============================================ */
+@media (min-width: 1440px) {
+    /* Container pode ser um pouco mais largo */
+    .container {
+        max-width: 1320px;
+    }
+
+    /* Hero pode ser um pouco maior */
+    .hero {
+        min-height: 85vh;
+    }
+}
+
+/* ============================================
+   DESKTOP 4K (min 1920px) — telas muito grandes
+   ============================================ */
+@media (min-width: 1920px) {
+    /* Limita o tamanho máximo do conteúdo pra não ficar exageradamente grande */
+    .container {
+        max-width: 1500px;
+    }
+
+    /* Aumenta fonte base ligeiramente */
+    html {
+        font-size: 17px;
+    }
+}
