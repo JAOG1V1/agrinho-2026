@@ -3303,13 +3303,29 @@ body.tema-escuro .tag-pratica {
     margin-bottom: 0.25rem;
 }
 
-.jogo-overlay .botao {
-    background-color: white;
-    color: var(--verde-escuro);
+/* Botao primario no overlay do jogo: verde solido (consistente com o site) */
+.jogo-overlay .botao-primario {
+    background: var(--verde-medio);
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.jogo-overlay .botao:hover {
-    background-color: var(--dourado);
+.jogo-overlay .botao-primario:hover {
+    background: var(--verde-escuro);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Botao secundario no overlay: contorno branco para destacar no fundo escuro */
+.jogo-overlay .botao-secundario {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+.jogo-overlay .botao-secundario:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: white;
 }
 
 .jogo-instrucoes {
