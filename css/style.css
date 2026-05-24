@@ -3263,13 +3263,13 @@ body.tema-escuro .tag-pratica {
     justify-content: center;
     z-index: 100;
     color: white;
-    /* Padding compacto para caber tudo sem scroll interno */
-    padding: 1.25rem 1.5rem;
+    /* Padding generoso pra botoes nao colarem nas bordas */
+    padding: 1.5rem 1.5rem 2rem;
     text-align: center;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    /* Esconde overflow para forçar conteúdo a caber */
-    overflow: hidden;
+    /* Permite scroll se conteudo nao couber (telas pequenas) */
+    overflow-y: auto;
     /* Gap pequeno entre elementos filhos */
     gap: 0.3rem;
 }
@@ -5563,7 +5563,7 @@ body.tema-escuro .caixa-info-titulo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0.75rem;
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
