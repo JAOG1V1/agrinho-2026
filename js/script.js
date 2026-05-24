@@ -3129,6 +3129,18 @@ function terminarJogo(motivo) {
         }
     }
 
+    // Ícone dinâmico: muda conforme o resultado do jogo
+    const iconeFim = document.getElementById('iconeFim');
+    if (iconeFim) {
+        if (vitoriaPerfeita) {
+            iconeFim.textContent = '🏆';
+        } else if (venceu) {
+            iconeFim.textContent = '🎉';
+        } else {
+            iconeFim.textContent = '🥀';
+        }
+    }
+
     if (mensagemFim) {
         let texto;
         if (vitoriaPerfeita) {
