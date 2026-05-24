@@ -372,17 +372,27 @@ main {
     transition: var(--transicao);
     cursor: pointer;
     border: 2px solid transparent;
+    background-clip: padding-box;
+    text-decoration: none;
 }
 
 .botao-primario {
-    background: linear-gradient(135deg, var(--verde-medio), var(--verde-escuro));
+    background: var(--verde-medio);
     color: white;
-    box-shadow: var(--sombra-media);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .botao-primario:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--sombra-forte);
+    background: var(--verde-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Estado de foco mais sutil para botoes (acessibilidade preservada) */
+.botao:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: -5px;
+    box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.4);
 }
 
 .botao-secundario {
