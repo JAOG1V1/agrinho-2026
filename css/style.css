@@ -4687,11 +4687,12 @@ body.modo-konami {
     font-weight: 700;
 }
 
-/* Mobile: cards de praticas mais compactos pra texto nao ficar apertado */
+/* Mobile: cards de praticas — badge no canto pra texto ter espaço total */
 @media (max-width: 600px) {
     .card-pratica-impacto {
+        position: relative;
         gap: 0.5rem;
-        padding: 0.75rem 0.85rem;
+        padding: 0.85rem 3rem 0.85rem 0.85rem; /* espaço extra à direita pro badge */
         flex-wrap: nowrap;
     }
 
@@ -4701,18 +4702,35 @@ body.modo-konami {
     }
 
     .card-impacto-icone {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    .card-impacto-texto {
+        font-size: 0.9rem;
+        line-height: 1.35;
+        min-width: 0;
+        flex: 1;
+    }
+
+    /* Badge flutua no canto superior direito */
+    .card-impacto-pontos {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.2rem 0.55rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile MUITO pequeno: stack vertical completo */
+@media (max-width: 380px) {
+    .card-pratica-impacto {
+        padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+        gap: 0.5rem;
     }
 
     .card-impacto-texto {
         font-size: 0.85rem;
-        line-height: 1.3;
-        min-width: 0;
-    }
-
-    .card-impacto-pontos {
-        padding: 0.15rem 0.5rem;
-        font-size: 0.7rem;
     }
 }
 
