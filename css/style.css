@@ -2968,6 +2968,21 @@ body.tema-escuro .tag-pratica {
     right: 1rem;
 }
 
+/* Em mobile, mostra so a versao curta dos rotulos (Antes/Depois) */
+@media (max-width: 640px) {
+    .comparador-rotulo {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        top: 0.5rem;
+    }
+    .comparador-rotulo.antes { left: 0.5rem; }
+    .comparador-rotulo.depois { right: 0.5rem; }
+
+    .rotulo-texto-completo {
+        display: none; /* esconde "— Solo degradado/restaurado" */
+    }
+}
+
 /* Linha divisória vertical */
 .comparador-divisor {
     position: absolute;
