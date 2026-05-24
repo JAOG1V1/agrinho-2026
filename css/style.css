@@ -3303,8 +3303,8 @@ body.tema-escuro .tag-pratica {
     margin-bottom: 0.25rem;
 }
 
-/* Botao primario no overlay do jogo: verde vibrante com brilho para destacar */
-.jogo-overlay .botao-primario {
+/* Botao "Iniciar Jogo": verde vibrante com brilho (apenas o de inicio) */
+#botaoIniciarJogo {
     background: linear-gradient(135deg, #6bb86c, #4f9d50);
     color: white;
     font-weight: 700;
@@ -3318,7 +3318,7 @@ body.tema-escuro .tag-pratica {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.jogo-overlay .botao-primario:hover {
+#botaoIniciarJogo:hover {
     background: linear-gradient(135deg, #7cc97e, #5fb763);
     transform: translateY(-3px);
     box-shadow:
@@ -3327,11 +3327,23 @@ body.tema-escuro .tag-pratica {
         0 -2px 6px rgba(0, 0, 0, 0.15) inset;
 }
 
-.jogo-overlay .botao-primario:active {
+#botaoIniciarJogo:active {
     transform: translateY(0);
     box-shadow:
         0 3px 10px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Outros botoes primarios no overlay (Refazer rapido): verde solido, mesmo tamanho dos demais */
+.jogo-overlay .botao-primario:not(#botaoIniciarJogo) {
+    background: var(--verde-medio);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.jogo-overlay .botao-primario:not(#botaoIniciarJogo):hover {
+    background: var(--verde-escuro);
+    transform: translateY(-2px);
 }
 
 /* Botao secundario no overlay: contorno branco para destacar no fundo escuro */
