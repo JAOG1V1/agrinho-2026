@@ -3531,20 +3531,26 @@ body.tema-escuro .tag-pratica {
         font-size: 3.5rem;
     }
 
-    /* Mobile: stats em 2 colunas (cabe melhor que 3) */
+    /* Mobile: stats em 1 coluna (cabe certinho, nada cortado) */
     .estatisticas-fim-jogo {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
         margin: 0.5rem 0;
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
+        width: 100%;
     }
 
     .stat-fim-jogo {
-        padding: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
     }
 
     .stat-fim-rotulo {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        text-align: left;
     }
 
     .stat-fim-valor {
@@ -3561,6 +3567,7 @@ body.tema-escuro .tag-pratica {
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
+        padding: 0 0.25rem;
     }
 
     .jogo-overlay .quiz-controles.controles-centralizados .botao,
@@ -3571,10 +3578,19 @@ body.tema-escuro .tag-pratica {
         font-size: 0.95rem;
     }
 
-    /* Mobile: overlay sem overflow horizontal */
+    /* Mobile: overlay com scroll vertical, conteudo do topo */
     .jogo-overlay {
         overflow-x: hidden;
-        padding: 1rem 0.75rem 1.5rem;
+        overflow-y: auto;
+        padding: 1rem 0.5rem 1.5rem;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* Mobile: icone do fim de jogo menor */
+    .jogo-overlay .icone-medio-margin {
+        font-size: 2.5rem;
+        margin: 0;
     }
 }
 
