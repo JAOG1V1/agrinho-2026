@@ -4687,6 +4687,35 @@ body.modo-konami {
     font-weight: 700;
 }
 
+/* Mobile: cards de praticas mais compactos pra texto nao ficar apertado */
+@media (max-width: 600px) {
+    .card-pratica-impacto {
+        gap: 0.5rem;
+        padding: 0.75rem 0.85rem;
+        flex-wrap: nowrap;
+    }
+
+    .card-pratica-impacto input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-impacto-icone {
+        font-size: 1.3rem;
+    }
+
+    .card-impacto-texto {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        min-width: 0;
+    }
+
+    .card-impacto-pontos {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.7rem;
+    }
+}
+
 /* ============================================
    FORMULARIO DE CONTATO - MELHORIAS
    ============================================ */
