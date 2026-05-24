@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>./index.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>./sobre.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/sobre.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>./praticas.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/praticas.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>./simulador.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/simulador.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>./quiz.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/quiz.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>./jogo.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/jogo.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>./glossario.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/glossario.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>./contato.html</loc>
+        <loc>https://jaog1v1.github.io/agrinho-2026/contato.html</loc>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>

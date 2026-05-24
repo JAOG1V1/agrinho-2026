@@ -4,5 +4,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap (substituir pela URL absoluta apos publicar no GitHub Pages)
-# Exemplo: Sitemap: https://seuusuario.github.io/agro-forte/sitemap.xml
+# Sitemap (URL absoluta do site publicado no GitHub Pages)
+Sitemap: https://jaog1v1.github.io/agrinho-2026/sitemap.xml

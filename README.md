@@ -30,6 +30,18 @@ _Site interativo educacional para o Concurso Agrinho 2026_
 
 ---
 
+<div align="center">
+
+### 🌐 Acesse o site publicado
+
+[![🌱 Visitar Agro Forte](https://img.shields.io/badge/🌱_Visitar_Agro_Forte-2D6A4F?style=for-the-badge&logoColor=white)](https://jaog1v1.github.io/agrinho-2026/)
+
+**🔗 [https://jaog1v1.github.io/agrinho-2026/](https://jaog1v1.github.io/agrinho-2026/)**
+
+</div>
+
+---
+
 > 🌱 _"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"_
 
 Site interativo educacional desenvolvido para o **Concurso Agrinho 2026**, na **Categoria Programação — Subcategoria 3 (Front-End)**, promovido pelo **SENAR-PR** (Serviço Nacional de Aprendizagem Rural) em parceria com a **SEED-PR** (Secretaria de Estado da Educação do Paraná).
@@ -643,14 +655,20 @@ O projeto passou por uma auditoria rigorosa com a ferramenta **Lighthouse** (Goo
 
 ### Online (recomendado)
 
-O projeto está publicado via **GitHub Pages**. Acesse pelo link declarado na seção **About** deste repositório.
+O projeto está publicado via **GitHub Pages**, acessível em:
+
+🌐 **[https://jaog1v1.github.io/agrinho-2026/](https://jaog1v1.github.io/agrinho-2026/)**
+
+Acesse o link acima em qualquer navegador moderno (Chrome, Firefox, Edge, Safari) para explorar o site completo com todas as funcionalidades — jogo, simulador, quiz, mapa interativo, glossário, etc. — em ambiente HTTPS necessário para que PWA e Service Worker (modo offline) funcionem corretamente.
+
+> 💡 **Dica:** Em navegadores compatíveis, você pode **instalar o site como aplicativo** clicando no ícone de instalação na barra de endereços.
 
 ### Localmente
 
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/SEU-USUARIO/agrinho-2026.git
+   git clone https://github.com/jaog1v1/agrinho-2026.git
    ```
 
 2. **Abra o arquivo `index.html`** em qualquer navegador moderno (Chrome, Firefox, Edge, Safari).
