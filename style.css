@@ -3792,7 +3792,10 @@ body.tema-escuro .tag-pratica {
 .legenda-cor-dourado { background-color: var(--dourado); }
 
 /* Placeholder de região */
-.titulo-placeholder { color: var(--texto-suave); }
+.titulo-placeholder {
+    color: var(--texto-suave);
+    justify-content: center;
+}
 
 /* Avatar/info icone redondo para histórias */
 .icone-extra-grande {
