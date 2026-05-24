@@ -3268,10 +3268,17 @@ body.tema-escuro .tag-pratica {
     text-align: center;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    /* Permite scroll se conteudo nao couber (telas pequenas) */
+    /* Permite scroll se conteudo nao couber, mas esconde a barra visualmente */
     overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge antigo */
     /* Gap pequeno entre elementos filhos */
     gap: 0.3rem;
+}
+
+/* Esconde a barra de rolagem em Chrome/Safari/Edge moderno */
+.jogo-overlay::-webkit-scrollbar {
+    display: none;
 }
 
 .jogo-overlay.escondido {
