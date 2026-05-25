@@ -194,7 +194,7 @@ p {
 }
 
 .logo-italic {
-    color: var(--verde-medio);
+    color: #2f6230;
     font-style: italic;
     font-weight: 600;
     margin-left: 0.1em;
@@ -2442,9 +2442,9 @@ body.tema-escuro .resultado-simulador h3 {
 }
 
 .letra-filtro.ativa {
-    background-color: var(--verde-medio);
+    background-color: #2f6230;
     color: white;
-    border-color: var(--verde-medio);
+    border-color: #2f6230;
 }
 
 .letra-filtro.desabilitado {
