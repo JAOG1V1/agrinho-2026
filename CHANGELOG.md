@@ -4,6 +4,112 @@ Histórico de evolução do projeto desde sua concepção. Segue o formato [Keep
 
 ---
 
+## [1.5.0] — 2026-05-25 — Refresh Visual e Documentação Inline 🎨📚
+
+### 🎯 Objetivo
+
+Aplicar feedback formal do orientador **Prof. Allison Fernando dos Santos** com 2 melhorias estratégicas:
+
+1. **Substituir elementos visuais** que poderiam aparentar geração por IA (logos com círculo verde + emoji 🌱, padrão comum em geradores automáticos de logos)
+2. **Adicionar documentação inline educativa** em todos os arquivos HTML, demonstrando compreensão profunda das tecnologias e decisões de design
+
+### 🚀 Melhorado
+
+- 🎨 **Logo redesenhada — Wordmark Tipográfico AgroForte**
+  - **Antes:** Círculo verde com emoji 🌱 + "Agro Forte" em serif
+  - **Depois:** Wordmark tipográfico "AgroForte" com:
+    - `Agro` em fonte serif (Playfair Display), peso 800 (extra bold), verde escuro
+    - `Forte` em itálico, peso 600, verde médio
+    - Linha decorativa sutil sob "Forte" (gradiente verde → transparente)
+    - Animação no hover (linha decorativa intensifica)
+  - **Versão no rodapé:** "Agro" branco + "Forte" dourado-claro
+  - Aplicado em **todos os 9 HTMLs** (header + footer)
+
+- 💫 **Tela de carregamento — Loader Giratório CSS**
+  - **Antes:** Emoji 🌱 grande + "Agro Forte" em serif
+  - **Depois:** Loader circular CSS animado:
+    - 70×70px com borda 4px
+    - Borda topo branca + borda direita dourada-claro
+    - Animação `girar 1s linear infinite` (rotação contínua)
+    - Wordmark "AgroForte" abaixo (versão branca + dourada)
+  - 100% CSS, zero imagens, zero emojis
+
+- 📚 **Documentação inline em 9 HTMLs**
+  - **`index.html` (DOCUMENTAÇÃO COMPLETA):**
+    - Bloco intro no topo (autor, orientador, escola, estrutura)
+    - Comentários explicando cada `<meta>` tag e seu propósito
+    - Cabeçalhos decorativos em cada uma das 8 seções do `<main>`
+    - Explicações educativas sobre tecnologias (PWA, Service Worker, ARIA, Open Graph, etc.)
+    - Total: ~298 linhas adicionadas
+  - **8 HTMLs restantes (intro educativa):**
+    - Cabeçalho profissional com nome, autoria, propósito
+    - Lista de funcionalidades e destaques técnicos
+    - Referência ao `index.html` para detalhes compartilhados
+    - Específico para o conteúdo único de cada página
+
+### ✨ Adicionado
+
+- 🎨 **Classes CSS novas para identidade visual**:
+  - `.logo-marca` — Container do wordmark
+  - `.logo-bold` — Estilo da palavra "Agro" (peso 800)
+  - `.logo-italic` — Estilo da palavra "Forte" (itálico)
+  - `.logo-italic::after` — Linha decorativa com gradiente
+  - `.loader-spinner` — Loader giratório CSS
+- 🌀 **Nova animação CSS**: `@keyframes girar` (rotação 360° infinita)
+- 🎨 **Variações de cor por contexto**:
+  - Header: tons de verde (verde-escuro + verde-medio)
+  - Footer: branco + dourado-claro
+  - Tela de carregamento: branco + dourado-claro
+
+### 🐛 Corrigido
+
+- ❌ **Falta de unicidade visual** (logo genérico com emoji universal)
+- ❌ **Vulnerabilidade narrativa** (poderia ser questionado se logo veio de IA)
+- ❌ **Falta de documentação inline** (código sem explicações da intenção)
+
+### 🎓 Feedback do Orientador — APLICADO ✅
+
+| Conselho do Prof. Allison | Implementação |
+| :--- | :--- |
+| ✅ "Trocar a logo que parece IA" | Wordmark tipográfico (100% código, sem ícones genéricos) |
+| ✅ "Adicionar comentários no código explicando o que cada parte faz" | Documentação inline profissional em todos os 9 HTMLs |
+
+### 🔧 Técnico
+
+- CSS: 5.985+ → **6.050+ linhas** (+65 linhas: loader CSS + wordmark + adaptações)
+- HTML: total de **+484 linhas** de comentários educativos distribuídas:
+  - `index.html`: +298 linhas (documentação detalhada por seção)
+  - Outros 8 HTMLs: +186 linhas combinadas (intro educativa cada)
+- Zero emojis em elementos de **identidade da marca** (logo + tela de carregamento)
+- Emojis MANTIDOS apenas em contextos **funcionais** (ícones de conquistas, avisos, ícones de cards) — padrão da indústria de UX
+- Conformidade com regulamento mantida em 100%
+
+### 📊 Estatísticas do Refresh
+
+| Métrica | Valor |
+| :--- | :---: |
+| Arquivos HTML modificados | 9/9 |
+| Arquivos CSS modificados | 1/1 |
+| Commits realizados | 5+ |
+| Linhas de código adicionadas | ~550 |
+| Tempo total de implementação | ~3 horas |
+| Conselhos do orientador atendidos | 2/2 ✅ |
+
+### 🎯 Impacto
+
+**Antes do refresh:**
+- Logo poderia ser confundido com gerador de IA
+- Código sem explicações inline
+- Risco narrativo na avaliação
+
+**Depois do refresh:**
+- Identidade visual única e verificável (tipografia 100% código)
+- Documentação inline profissional em cada HTML
+- Demonstração clara de compreensão técnica
+- Aplicação visível de feedback do orientador (boa prática educacional)
+
+---
+
 ## [1.4.0] — 2026-05-24 — Polimentos Mobile e Bug Fixes 📱✨
 
 ### 🎯 Objetivo
