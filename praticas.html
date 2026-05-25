@@ -1,6 +1,34 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página PRÁTICAS SUSTENTÁVEIS (praticas.html)
+    ================================================================
+    Catálogo completo de 12 práticas sustentáveis do agronegócio
+    brasileiro, com filtros interativos por categoria.
+
+    O QUE TEM NESTA PÁGINA:
+      1. CABEÇALHO        → "Práticas Sustentáveis" (intro)
+      2. FILTROS          → 5 botões (Todas, Solo, Água, Energia, Biodiv.)
+      3. GRADE DE PRÁTICAS → 12 cards detalhados:
+         • Plantio Direto       • Rotação de Culturas
+         • Agricultura Precisão  • Sistema Agroflorestal
+         • Irrigação Inteligente • Energia Solar Rural
+         • Biodigestor          • Bioinsumos
+         • Reflorestamento      • Pecuária Sustentável
+         • Mata Ciliar          • Compostagem
+
+    INTERATIVIDADE:
+      • Clicar em filtro mostra só as práticas daquela categoria
+      • Transição suave (fade) entre estados
+      • Cada card mostra: ícone, nome, descrição, benefícios
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Práticas sustentáveis no agronegócio: plantio direto, rotação de culturas, energia renovável e mais">
@@ -69,9 +97,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -249,8 +276,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

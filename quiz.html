@@ -1,6 +1,38 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página QUIZ (quiz.html)
+    ================================================================
+    Quiz interativo com 15 perguntas de múltipla escolha sobre
+    agronegócio sustentável. Inclui síntese de voz (acessibilidade).
+
+    ESTRUTURA DO QUIZ:
+      • 15 perguntas com 4 opções cada
+      • Tema variado: solo, água, biodiversidade, energia, mercados
+      • Feedback IMEDIATO após cada resposta
+        (✅ verde se acertou, ❌ vermelho se errou)
+      • Explicação curta de POR QUE é a resposta certa
+      • Barra de progresso no topo
+
+    RECURSOS ESPECIAIS:
+      🔊 BOTÃO "OUVIR PERGUNTA" — Acessibilidade!
+         Usa a Web Speech API do navegador para LER a pergunta
+         em voz alta. Útil para usuários com dificuldade visual
+         ou que preferem áudio.
+
+      🎉 CONFETTI ANIMADO — Se acertar 100% das perguntas, uma
+         chuva de confete cai na tela (animação CSS + JS).
+
+      📤 BOTÃO COMPARTILHAR — Permite compartilhar o resultado
+         nas redes sociais (Web Share API).
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quiz interativo sobre agronegócio sustentável. Teste seus conhecimentos sobre o equilíbrio entre produção e meio ambiente">
@@ -69,9 +101,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -225,8 +256,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

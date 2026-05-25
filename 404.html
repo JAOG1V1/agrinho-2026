@@ -1,6 +1,44 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página de ERRO 404 (404.html)
+    ================================================================
+    Página exibida quando o usuário tenta acessar uma URL que
+    NÃO EXISTE no site (link quebrado, digitou errado, etc.).
+
+    POR QUE TER UMA PÁGINA 404 CUSTOMIZADA?
+      ✅ Profissional: site sério tem isso, dump genérico do navegador
+      ✅ UX melhor: mostra opções de navegação em vez de "deu erro"
+      ✅ Mantém identidade visual: usuário não se sente "perdido"
+      ✅ SEO: Google reconhece página 404 customizada e indexa direito
+
+    O QUE TEM AQUI:
+      🎨 ILUSTRAÇÃO SVG AUTORAL → Trator perdido no campo (cenário
+         de "se perdeu na fazenda" — temático com o projeto)
+
+      💬 MENSAGEM AMIGÁVEL → "Página não encontrada — parece que essa
+         página se perdeu no campo!"
+
+      🧭 4 CARDS DE NAVEGAÇÃO SUGERIDOS → Links pras páginas mais
+         relevantes (Início, Práticas, Quiz, Jogo)
+
+      🔙 BOTÃO VOLTAR → Volta pra última página visitada (window.history)
+
+    COMO FUNCIONA NO GITHUB PAGES:
+      O GitHub Pages exibe automaticamente este arquivo quando
+      detecta uma URL inválida. Não precisa de configuração — basta
+      o arquivo se chamar "404.html" e estar na raiz.
+
+    META ROBOTS noindex: o Google NÃO indexa esta página (porque
+    é uma página de erro, não tem conteúdo útil pra ranquear).
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página não encontrada - Agro Forte | Agrinho 2026">
@@ -40,9 +78,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">

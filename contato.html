@@ -1,6 +1,52 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página CONTATO (contato.html)
+    ================================================================
+    Formulário de contato + cards informativos + FAQ.
+
+    O QUE TEM NESTA PÁGINA:
+      1. CARDS DE INFORMAÇÕES → 4 cards laterais com:
+         • E-mail oficial do concurso
+         • Site oficial do Agrinho/SENAR-PR
+         • Telefone de contato
+         • Endereço da escola
+
+      2. FORMULÁRIO DE CONTATO → 4 campos:
+         • Nome completo (obrigatório)
+         • E-mail (obrigatório, validação regex)
+         • Assunto (dropdown com opções)
+         • Mensagem (textarea obrigatório)
+         + Checkbox "Aceito que dados sejam usados"
+         + Botão "Enviar mensagem"
+
+      3. FAQ — Perguntas frequentes em acordeão expansível:
+         • O que é o Agrinho?
+         • Qual o tema de 2026?
+         • Como o site foi feito?
+         • Posso compartilhar?
+
+    COMO O FORMULÁRIO FUNCIONA:
+      Ao clicar em "Enviar", o site VALIDA os campos via JavaScript:
+        • Nome não pode estar vazio
+        • E-mail deve seguir formato válido
+        • Mensagem mínimo 10 caracteres
+        • Aceite obrigatório
+
+      Se TUDO OK, abre o cliente de e-mail do usuário (Gmail,
+      Outlook, etc.) com a mensagem PRONTA pra ser enviada manualmente.
+      Nenhum dado vai pra servidor — privacidade total.
+
+      Tecnologia usada: mailto: link gerado dinamicamente
+      (não requer backend, conforme regulamento do concurso).
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Entre em contato e compartilhe suas ideias sobre agronegócio sustentável">
@@ -69,9 +115,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -280,8 +325,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

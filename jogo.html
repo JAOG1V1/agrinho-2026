@@ -1,6 +1,59 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página JOGO "Defensor do Agro" (jogo.html)
+    ================================================================
+    Mini-jogo arcade em estilo "click-the-falling-objects" onde o
+    jogador defende a fazenda clicando nos elementos sustentáveis
+    (verdes) e evitando os elementos danosos.
+
+    MECÂNICA DO JOGO:
+      • Objetos caem do céu (gravidade simulada)
+      • Jogador clica/tap nos objetos VERDES (sustentáveis)
+        antes que toquem o chão → ganha pontos
+      • Se clicar em VERMELHOS (danosos) → perde combo
+      • Se um VERDE tocar o chão → perde uma vida
+      • Game over quando vidas = 0 OU tempo = 0
+
+    3 DIFICULDADES:
+      🌱 Fácil   → 90 segundos, velocidade baixa, 3 vidas
+      🌿 Médio   → 60 segundos, velocidade média, 3 vidas
+      🌳 Difícil → 45 segundos, velocidade alta, 2 vidas
+
+    MODO ENDLESS:
+      ♾️ Modo sem tempo (cronômetro sobe). Só termina ao perder
+         todas as vidas. Para jogadores que querem MAXIMIZAR a
+         pontuação sem pressão de tempo.
+
+    POWER-UPS (caem aleatoriamente):
+      ⭐ Estrela → 2x pontos por 5 segundos
+      ⏰ Relógio → Reduz velocidade dos objetos
+      💚 Coração → Recupera 1 vida
+      🛡️ Escudo → Imunidade a perda de vida por 5s
+
+    BOSS WAVES:
+      A cada 15 segundos, uma "onda especial" de objetos especiais
+      cai com bonus pontuação. Aumenta intensidade do jogo.
+
+    SISTEMA DE PONTUAÇÃO:
+      • Combo multiplica pontos (1x → 2x → 3x → 5x)
+      • Top 5 ranking salvo no localStorage do navegador
+      • Botão "Compartilhar" para divulgar pontuação
+
+    ÁUDIO:
+      Web Audio API (gerado proceduralmente, sem arquivos)
+      Botão de mute no canto pra silenciar sons.
+
+    ICONE DINÂMICO no fim de jogo (testa resultado):
+      🏆 = Vitória perfeita    🎉 = Vitória normal    🥀 = Derrota
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mini-jogo educativo Defensor do Agro - clique nos elementos sustentáveis e proteja o campo">
@@ -69,9 +122,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -568,8 +620,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

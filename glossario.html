@@ -1,6 +1,39 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página GLOSSÁRIO (glossario.html)
+    ================================================================
+    Dicionário interativo com 24 termos técnicos do agronegócio
+    sustentável organizado em formato de acordeão (expansível).
+
+    TERMOS COBERTOS (24 ao todo):
+      • A: Agricultura de Precisão, Agroecologia, APP, etc.
+      • B: Bioeconomia, Bioinsumos, Biodigestor
+      • C: Carbono Neutro, Crédito de Carbono, Cerrado
+      • D: Desertificação
+      • E: Erosão
+      • F: Fotovoltaico
+      • I: ILPF, Irrigação Inteligente
+      • M: Mata Ciliar, MIP, Manejo
+      • P: Plantio Direto, Polinização
+      • R: Reserva Legal, Rotação de Culturas
+      • S: Sequestro de Carbono, SAF, Sustentabilidade
+
+    RECURSOS:
+      🔤 FILTRO ALFABÉTICO — Botões A, B, C... mostram só os
+         termos que começam com aquela letra
+      🔍 BUSCA POR TEXTO — Campo de busca filtra termos em tempo
+         real conforme o usuário digita
+      📂 ACORDEÃO — Click no termo expande/recolhe a definição
+         (pode ter múltiplos abertos simultaneamente)
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Glossário com termos técnicos sobre agronegócio sustentável e meio ambiente">
@@ -69,9 +102,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -551,8 +583,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

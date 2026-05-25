@@ -1,6 +1,43 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página SIMULADOR DE FAZENDA (simulador.html)
+    ================================================================
+    Simulador interativo onde o usuário CONSTRÓI sua própria fazenda
+    sustentável escolhendo práticas com orçamento limitado.
+
+    MECÂNICA DO SIMULADOR:
+      • 12 LOTES vazios (grade 4×3) representando a fazenda
+      • 12 PRÁTICAS disponíveis no catálogo lateral
+      • ORÇAMENTO: R$ 1.000,00 inicial
+      • Cada prática tem CUSTO, GANHO de produtividade e
+        impacto na SUSTENTABILIDADE
+
+    GAMEPLAY:
+      1. Usuário clica em um lote vazio
+      2. Modal abre com catálogo de práticas disponíveis
+      3. Escolhe uma prática (paga o custo)
+      4. Lote ganha visual da prática escolhida
+      5. Stats em tempo real: produtividade, sustentabilidade, lucro
+      6. Botão "Finalizar simulação" → mostra resultado
+
+    RESULTADO POSSÍVEIS (5 NÍVEIS):
+      🥉 Fazenda Iniciante  (baixa pontuação)
+      🥈 Fazenda Tradicional
+      🥇 Fazenda Sustentável
+      🏆 Fazenda Modelo     (alta pontuação)
+      💎 Fazenda Lendária  (perfeição)
+
+    DESTAQUE TÉCNICO: Sistema com estado JS reativo — qualquer
+    mudança nos lotes atualiza TODOS os indicadores imediatamente.
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Simulador interativo de fazenda sustentável. Construa sua fazenda escolhendo práticas e veja o impacto em tempo real">
@@ -69,9 +106,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -284,8 +320,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">

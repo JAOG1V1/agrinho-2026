@@ -1,6 +1,30 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página SOBRE (sobre.html)
+    ================================================================
+    Apresenta o CONTEXTO do projeto: história do agronegócio
+    sustentável brasileiro, geografia rural e impacto pessoal.
+
+    O QUE TEM NESTA PÁGINA:
+      1. CABEÇALHO          → "Sobre o Projeto" (intro)
+      2. LINHA DO TEMPO     → Evolução do agro de 1970 até hoje (5 marcos)
+      3. MAPA DO BRASIL     → SVG autoral interativo das 5 regiões
+      4. CALCULADORA        → Quantas atitudes sustentáveis você pratica?
+
+    DESTAQUES TÉCNICOS:
+      • Linha do tempo com bolinhas alinhadas via flexbox
+      • Mapa do Brasil em SVG autoral (~250 linhas de paths)
+      • Click em cada região mostra dados específicos
+      • Calculadora soma pontos em tempo real (JavaScript reativo)
+
+    OBS: Para detalhes das partes COMUNS (head, header, footer),
+         consulte os comentários do arquivo index.html
+    ================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS — Configuração SEO, viewport, redes sociais (ver index.html para detalhes) -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conheça a importância do agronegócio sustentável e o equilíbrio entre produção e meio ambiente">
@@ -69,9 +93,8 @@
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
-            <a href="index.html" class="logo">
-                <span class="logo-icone" aria-hidden="true">🌱</span>
-                <span>Agro Forte</span>
+            <a href="index.html" class="logo" aria-label="Agro Forte - Página inicial">
+                <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -103,6 +126,11 @@
         </nav>
     </header>
 
+    <!--
+        ============================================================
+        CONTEÚDO PRINCIPAL — 4 seções únicas desta página
+        ============================================================
+    -->
     <main id="conteudoPrincipal">
         <!-- CABECALHO DA PAGINA -->
         <section class="pagina-cabecalho">
@@ -170,6 +198,20 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            LINHA DO TEMPO — Evolução do Agronegócio Brasileiro
+            ════════════════════════════════════════════════════════
+            Apresenta 5 marcos históricos importantes do agro:
+              • 1970-1980 → Mecanização e revolução verde
+              • Década 1990 → Plantio direto em larga escala
+              • Anos 2000 → Agricultura de precisão (GPS, sensores)
+              • Anos 2010 → ILPF (Integração Lavoura-Pecuária-Floresta)
+              • Anos 2020+ → IA, drones, mercado de carbono
+
+            Visualmente: linha vertical verde-gradiente com 5 bolinhas
+            posicionadas no centro dos cards de descrição (flexbox).
+        -->
         <!-- LINHA DO TEMPO -->
         <section class="secao fundo-destaque">
             <div class="container">
@@ -208,6 +250,30 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            MAPA INTERATIVO DO BRASIL — 5 regiões clicáveis
+            ════════════════════════════════════════════════════════
+            SVG AUTORAL desenhado à mão (cerca de 250 linhas de paths)
+            representando o mapa do Brasil dividido em 5 regiões:
+
+              🌳 NORTE        → Amazônia, sociobiodiversidade
+              ☀️ NORDESTE     → Sertão, Cerrado, irrigação
+              🌾 CENTRO-OESTE → Soja, milho, agronegócio forte
+              🏭 SUDESTE      → Cana, café, citros, mecanização
+              ❄️ SUL          → Paraná, ILPF, Plantio direto
+
+            INTERATIVIDADE (JavaScript):
+              • Hover na região → destaca com cor mais clara
+              • Click na região → mostra informações específicas
+                (estatísticas, práticas dominantes, desafios)
+
+            DETALHES VISUAIS:
+              • Oceano azul com ondas (pattern SVG)
+              • Estado do Paraná destacado com estrela ⭐
+                (porque é onde o Agrinho acontece)
+              • Drop-shadow filter SVG para efeito 3D sutil
+        -->
         <!-- MAPA INTERATIVO DO BRASIL -->
         <section class="secao mapa-brasil-secao">
             <div class="container">
@@ -415,6 +481,27 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            CALCULADORA DE IMPACTO PESSOAL
+            ════════════════════════════════════════════════════════
+            Pergunta ao usuário: "Quantas atitudes sustentáveis você
+            pratica no dia a dia?". Apresenta uma lista de checkboxes
+            com práticas comuns:
+              • Separar lixo reciclável (+15)
+              • Economizar água em casa (+20)
+              • Preferir alimentos locais (+15)
+              • Evitar desperdício de comida (+10)
+              • E mais 6 atitudes...
+
+            FUNCIONAMENTO (JavaScript reativo):
+              • Cada checkbox marcado → soma pontos
+              • Total atualizado EM TEMPO REAL (sem clicar em "Enviar")
+              • No final, mostra mensagem motivacional
+                baseada na pontuação total do usuário
+
+            Em mobile: badge "+15" flutua no canto pra texto ter espaço.
+        -->
         <!-- CALCULADORA DE IMPACTO -->
         <section class="secao">
             <div class="container">
@@ -495,8 +582,7 @@
             <div class="grid-rodape">
                 <div class="rodape-coluna">
                     <div class="rodape-logo">
-                        <span aria-hidden="true">🌱</span>
-                        <span>Agro Forte</span>
+                        <span class="logo-marca"><span class="logo-bold">Agro</span><span class="logo-italic">Forte</span></span>
                     </div>
                     <p>Projeto desenvolvido para o Concurso Agrinho 2026, na categoria Programação, com o tema "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente".</p>
                     <div class="rodape-autoria">
