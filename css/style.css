@@ -476,7 +476,7 @@ body.tema-escuro .botao-secundario {
 
 .secao-titulo span {
     display: inline-block;
-    color: var(--verde-medio);
+    color: #2f6230;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
