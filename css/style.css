@@ -176,6 +176,59 @@ p {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--verde-escuro);
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+/* Wordmark autoral "AgroForte" com tipografia distintiva */
+.logo-marca {
+    display: inline-flex;
+    align-items: baseline;
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+
+.logo-bold {
+    color: var(--verde-escuro);
+    font-weight: 800;
+}
+
+.logo-italic {
+    color: var(--verde-medio);
+    font-style: italic;
+    font-weight: 600;
+    margin-left: 0.1em;
+    position: relative;
+}
+
+/* Acento decorativo sutil sob o "Forte" (linha verde-medio) */
+.logo-italic::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--verde-medio));
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.logo:hover .logo-italic::after {
+    opacity: 1;
+}
+
+/* Versao do wordmark no rodape (cor branca pra contraste no fundo verde) */
+.rodape-logo .logo-marca .logo-bold {
+    color: white;
+}
+
+.rodape-logo .logo-marca .logo-italic {
+    color: var(--dourado-claro);
+}
+
+.rodape-logo .logo-marca .logo-italic::after {
+    background: linear-gradient(90deg, transparent, var(--dourado-claro));
 }
 
 .logo-icone {
