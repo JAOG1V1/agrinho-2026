@@ -377,7 +377,7 @@ main {
 }
 
 .botao-primario {
-    background: var(--verde-medio);
+    background: #2f6230;
     color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
