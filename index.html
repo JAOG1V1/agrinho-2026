@@ -1,17 +1,69 @@
+<!--
+    ================================================================
+    AGRO FORTE — Página Inicial (index.html)
+    ================================================================
+    Site educacional para o Concurso Agrinho 2026 (Categoria Front-End)
+
+    Autor: João Gabriel Sabedra Vieira
+    Orientação: Prof. Allison Fernando dos Santos
+    Escola: Colégio Cívico-Militar Douradina
+
+    Esta é a PÁGINA INICIAL do projeto. Apresenta o tema,
+    convida o visitante a explorar e mostra estatísticas e histórias
+    do agronegócio sustentável brasileiro.
+
+    ESTRUTURA DO ARQUIVO:
+      1. <head>     → Metadados (SEO, redes sociais, recursos)
+      2. <noscript> → Mensagem para navegadores sem JavaScript
+      3. <header>   → Cabeçalho com navegação entre as 9 páginas
+      4. <main>     → Conteúdo principal (hero, stats, histórias, etc.)
+      5. <footer>   → Rodapé com créditos e informações do concurso
+    ================================================================
+-->
 <!DOCTYPE html>
+<!-- DOCTYPE html5: declaração obrigatória do tipo de documento (regulamento 6.1.15) -->
 
 <html lang="pt-BR">
+<!-- lang="pt-BR": informa ao navegador e leitores de tela que o idioma é português brasileiro (acessibilidade WCAG) -->
+
 <head>
+    <!--
+        ============================================================
+        BLOCO DE METADADOS (informações invisíveis para o usuário,
+        mas essenciais para navegadores, buscadores e redes sociais)
+        ============================================================
+    -->
+
+    <!-- charset UTF-8: permite acentos, emojis e caracteres especiais (ç, ã, é, etc.) -->
     <meta charset="UTF-8">
+
+    <!-- viewport: configura o site para se adaptar ao tamanho da tela (responsividade) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- description: resumo da página que aparece nos resultados do Google -->
     <meta name="description" content="Projeto Agrinho 2026 - Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente">
+
+    <!-- keywords: palavras-chave para SEO (mecanismos de busca) -->
     <meta name="keywords" content="agrinho, agronegócio, sustentabilidade, meio ambiente, agricultura, paraná">
+
+    <!-- author: identifica o criador do projeto (regulamento exige autoria) -->
     <meta name="author" content="João Gabriel Sabedra Vieira">
+
+    <!-- theme-color: cor que o navegador mobile usa na barra de status (PWA) -->
     <meta name="theme-color" content="#4f9d50">
+
+    <!-- robots: autoriza o Google a indexar a página no resultado de buscas -->
     <meta name="robots" content="index, follow">
+
+    <!-- view-transition: ativa transições suaves entre páginas (API moderna do navegador) -->
     <meta name="view-transition" content="same-origin">
 
-    <!-- Open Graph (compartilhamento em redes sociais) -->
+    <!--
+        ============================================================
+        OPEN GRAPH — Define como o link aparece ao ser compartilhado
+        no WhatsApp, Facebook, LinkedIn (mostra imagem + título)
+        ============================================================
+    -->
     <meta property="og:title" content="Agro Forte | Agrinho 2026 - Futuro Sustentável">
     <meta property="og:description" content="Site interativo sobre agronegócio sustentável: simulador de fazenda, quiz, mini-jogo, glossário e mapa do Brasil.">
     <meta property="og:type" content="website">
@@ -22,20 +74,49 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <!-- Twitter Card -->
+    <!--
+        ============================================================
+        TWITTER CARD — Mesma lógica do Open Graph, mas específico
+        para o Twitter/X (formato grande de imagem)
+        ============================================================
+    -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Agro Forte | Agrinho 2026">
     <meta name="twitter:description" content="Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.">
     <meta name="twitter:image" content="og-image.svg">
 
+    <!-- Título da aba do navegador (aparece como nome da pestana) -->
     <title>Agro Forte | Agrinho 2026 - Futuro Sustentável</title>
+
+    <!--
+        ============================================================
+        RECURSOS EXTERNOS — Ligação com arquivos CSS, manifest, ícones
+        ============================================================
+    -->
+
+    <!-- style.css?v=2: folha de estilos (o "?v=2" força navegador a buscar versão nova) -->
     <link rel="stylesheet" href="css/style.css?v=2">
+
+    <!-- manifest.json: torna o site uma PWA instalável como aplicativo -->
     <link rel="manifest" href="manifest.json">
+
+    <!-- favicon.svg: ícone exibido na aba do navegador (broto verde autoral) -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- apple-touch-icon: ícone usado quando salvo na tela inicial do iPhone -->
     <link rel="apple-touch-icon" href="favicon.svg">
 </head>
 <body>
-    <!-- AVISO PARA USUÁRIOS SEM JAVASCRIPT HABILITADO -->
+
+    <!--
+        ============================================================
+        AVISO PARA USUÁRIOS SEM JAVASCRIPT
+        ============================================================
+        Se o usuário desabilitar o JavaScript no navegador, esta
+        mensagem aparece informando que algumas funcionalidades
+        (jogo, simulador, quiz) não vão funcionar. É uma boa prática
+        de acessibilidade chamada "graceful degradation".
+    -->
     <noscript>
         <div class="aviso-sem-js" role="alert">
             <strong><span class="icone-aviso" aria-hidden="true">⚠️</span>JavaScript desativado</strong>
@@ -43,7 +124,17 @@
         </div>
     </noscript>
 
-    <!-- TELA DE CARREGAMENTO -->
+    <!--
+        ============================================================
+        TELA DE CARREGAMENTO (loading screen)
+        ============================================================
+        Mostra "Carregando experiência sustentável..." enquanto a
+        página termina de carregar. O JavaScript remove esta tela
+        depois que tudo estiver pronto.
+
+        role="status" + aria-live="polite": leitores de tela anunciam
+        o status de carregamento sem interromper o usuário.
+    -->
     <div class="tela-carregamento" id="telaCarregamento" role="status" aria-live="polite">
         <div class="logo-carregamento" aria-hidden="true">🌱</div>
         <p class="texto-logo-carregamento">Agro Forte</p>
@@ -53,10 +144,28 @@
         </div>
     </div>
 
-    <!-- LINK DE PULAR PARA O CONTEUDO -->
+    <!--
+        ============================================================
+        SKIP LINK (link de pular para o conteúdo)
+        ============================================================
+        Link invisível que aparece quando o usuário pressiona Tab.
+        Permite pular o cabeçalho e ir direto pro conteúdo principal.
+        Recurso de acessibilidade essencial para usuários de teclado.
+    -->
     <a href="#conteudoPrincipal" class="skip-link">Pular para o conteúdo principal</a>
 
-    <!-- BARRA DE ACESSIBILIDADE -->
+    <!--
+        ============================================================
+        BARRA DE ACESSIBILIDADE
+        ============================================================
+        Botões fixos na lateral (desktop) ou no rodapé (mobile) que
+        permitem ao usuário ajustar a experiência:
+          • A pequeno → fonte normal
+          • A médio   → fonte grande
+          • A grande  → fonte extra grande
+          • ◐         → alterna alto contraste
+        Atende a WCAG 2.1 AA (recurso obrigatório de acessibilidade).
+    -->
     <aside class="barra-acessibilidade" aria-label="Controles de acessibilidade">
         <span class="titulo-barra">Acessibilidade</span>
         <button id="btnFonteMenor" aria-label="Fonte normal" title="Fonte normal">A</button>
@@ -65,7 +174,16 @@
         <button id="btnContraste" aria-label="Alternar alto contraste" title="Alto contraste">◐</button>
     </aside>
 
-    <!-- OVERLAY DE BUSCA -->
+    <!--
+        ============================================================
+        OVERLAY DE BUSCA (popup de busca)
+        ============================================================
+        Modal que abre ao clicar na lupa 🔍 do menu. Permite buscar
+        práticas, termos do glossário e páginas. Atalho: Ctrl+K.
+
+        role="dialog": indica para leitores de tela que é uma janela
+        modal interativa.
+    -->
     <div class="overlay-busca" id="overlayBusca" role="dialog" aria-label="Buscar no site">
         <div class="busca-container">
             <div class="busca-cabecalho">
@@ -77,6 +195,19 @@
         </div>
     </div>
 
+    <!--
+        ============================================================
+        CABEÇALHO (header) — Navegação principal entre as 9 páginas
+        ============================================================
+        Aparece no TOPO de todas as páginas. Contém:
+          • Logo "Agro Forte" (link para a página inicial)
+          • Links para as 9 páginas do site
+          • Botão de busca (🔍)
+          • Botão de tema escuro/claro (🌙/☀️)
+          • Menu hambúrguer em mobile (☰)
+
+        <nav>: tag semântica HTML5 indicando navegação principal.
+    -->
     <!-- CABECALHO -->
     <header class="cabecalho">
         <nav class="nav-principal" aria-label="Navegação principal">
@@ -114,7 +245,37 @@
         </nav>
     </header>
 
+    <!--
+        ============================================================
+        CONTEÚDO PRINCIPAL (<main>)
+        ============================================================
+        Esta é a parte central da página, onde fica todo o conteúdo
+        relevante. As seções abaixo são:
+
+          1. HERO            → Banner inicial com chamada principal
+          2. ESTATÍSTICAS    → Números do agronegócio brasileiro
+          3. PRÁTICAS        → 6 práticas sustentáveis em destaque
+          4. COMPARADOR      → Antes/Depois (solo degradado vs restaurado)
+          5. HISTÓRIAS       → Carrossel de histórias de agricultores
+          6. PROGRESSO       → Estatísticas pessoais do usuário
+          7. CONQUISTAS      → Sistema de badges/achievements
+          8. CALL TO ACTION  → Convite final para explorar o site
+
+        id="conteudoPrincipal": destino do skip link (acessibilidade)
+    -->
     <main id="conteudoPrincipal">
+
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 1 — HERO (banner principal)
+            ════════════════════════════════════════════════════════
+            Primeira parte da página que o visitante vê. Contém:
+              • Título grande: "Agro forte, futuro sustentável"
+              • Subtítulo explicando o tema
+              • 2 botões: "Conhecer práticas" e "Testar conhecimentos"
+              • Ilustração SVG autoral (campo com sol, plantas e
+                painel solar) — desenhada à mão em código SVG
+        -->
         <!-- HERO -->
         <section class="hero">
             <div class="container">
@@ -230,6 +391,15 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 2 — ESTATÍSTICAS ANIMADAS
+            ════════════════════════════════════════════════════════
+            Mostra 4 números impressionantes do agronegócio brasileiro
+            (PIB, área agrícola, empregos, exportações). Os números
+            "sobem" do zero até o valor final usando JavaScript
+            (efeito de contador animado quando entram na tela).
+        -->
         <!-- ESTATISTICAS -->
         <section class="estatisticas">
             <div class="container">
@@ -263,6 +433,20 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 3 — PRÁTICAS PRINCIPAIS (preview)
+            ════════════════════════════════════════════════════════
+            Mostra 6 práticas sustentáveis em destaque com:
+              • Ícone visual
+              • Nome da prática
+              • Descrição curta
+              • Link "Saiba mais"
+
+            Cada card é interativo (hover anima). Para ver TODAS as
+            12 práticas, o usuário clica em "Ver todas as práticas"
+            que leva para praticas.html.
+        -->
         <!-- PRATICAS PRINCIPAIS -->
         <section class="secao">
             <div class="container">
@@ -330,6 +514,20 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 4 — COMPARADOR ANTES & DEPOIS
+            ════════════════════════════════════════════════════════
+            Interação visual mostrando 2 cenários SOBREPOSTOS:
+              • Imagem ANTES: solo degradado, seco, sem vida
+              • Imagem DEPOIS: solo restaurado, verde, vivo
+
+            O usuário ARRASTA um controle no meio horizontalmente
+            para revelar mais de uma imagem ou outra. Implementado
+            com SVG autoral + JavaScript (mouse/touch handlers).
+
+            Tecnologia: clip-path CSS + Touch Events API.
+        -->
         <!-- COMPARADOR ANTES E DEPOIS -->
         <section class="secao fundo-destaque">
             <div class="container">
@@ -576,6 +774,20 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 5 — HISTÓRIAS DO CAMPO (carrossel)
+            ════════════════════════════════════════════════════════
+            Carrossel com 5 histórias reais de agricultores brasileiros
+            que adotaram práticas sustentáveis. Cada slide mostra:
+              • Foto/ícone do agricultor
+              • Nome e localização
+              • Citação (depoimento)
+              • Resultado obtido (em números)
+
+            Navegação: botões ← e →, pontos clicáveis, auto-play
+            opcional. Implementado em JavaScript puro (sem biblioteca).
+        -->
         <!-- HISTORIAS DO CAMPO -->
         <section class="secao">
             <div class="container">
@@ -684,6 +896,26 @@
             </div>
         </section>
 
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 6+7 — PROGRESSO PESSOAL + CONQUISTAS
+            ════════════════════════════════════════════════════════
+            Painel personalizado mostrando o progresso do visitante:
+              • Quantas práticas já visualizou
+              • Quantas perguntas do quiz acertou
+              • Tempo total navegando no site
+              • Conquistas desbloqueadas (sistema de badges)
+
+            Os dados são salvos no localStorage do navegador (não vão
+            pra servidor — privacidade total). 15 conquistas no total:
+              10 gerais + 5 específicas do mini-jogo.
+
+            Exemplos de conquista:
+              • "Iniciante" — visitou a primeira página
+              • "Explorador" — leu 5 práticas diferentes
+              • "Especialista" — acertou 100% do quiz
+              • "Sobrevivente" — venceu o jogo no modo Difícil
+        -->
         <!-- ESTATISTICAS PESSOAIS + CONQUISTAS -->
         <section class="secao fundo-destaque">
             <div class="container">
@@ -729,6 +961,17 @@
         </section>
 
         <!-- CHAMADA PARA ACAO -->
+        <!--
+            ════════════════════════════════════════════════════════
+            SEÇÃO 8 — CALL TO ACTION FINAL
+            ════════════════════════════════════════════════════════
+            Convite final para o usuário CONTINUAR explorando o site.
+            Aparece antes do rodapé com fundo destacado e um botão
+            grande "Testar conhecimentos" que leva ao Quiz.
+
+            Estratégia de UX: capturar o interesse do visitante quando
+            ele já viu boa parte do conteúdo e está pronto pra agir.
+        -->
         <section class="destaque-cta">
             <div class="container">
                 <div class="destaque-cta-conteudo fade-in">
@@ -743,6 +986,29 @@
         </section>
     </main>
 
+    <!--
+        ============================================================
+        RODAPÉ (footer) — Informações finais e créditos
+        ============================================================
+        Aparece no FINAL de todas as páginas. Contém 3 colunas:
+
+          COLUNA 1 (LOGO + AUTORIA):
+            • Logo "Agro Forte"
+            • Descrição curta do projeto
+            • Informações sobre o estudante, professor, escola
+
+          COLUNA 2 (NAVEGAÇÃO):
+            • Links para as 9 páginas do site
+
+          COLUNA 3 (CONCURSO):
+            • Informações sobre o Agrinho 2026
+            • Categoria e subcategoria
+
+        E abaixo, em uma linha separada: o copyright e o link para
+        a conformidade com o regulamento.
+
+        <footer>: tag semântica HTML5 indicando o rodapé da página.
+    -->
     <!-- RODAPE -->
     <footer class="rodape">
         <div class="container">
@@ -794,11 +1060,39 @@
         </div>
     </footer>
 
+    <!--
+        ============================================================
+        BOTÃO VOLTAR AO TOPO
+        ============================================================
+        Botão flutuante (round) no canto inferior direito que aparece
+        depois que o usuário rola um pouco pra baixo. Quando clicado,
+        o site SOBE suavemente até o início (smooth scroll).
+
+        Tecnologia: JavaScript adiciona/remove a classe "visivel"
+        com base em window.scrollY > 300.
+    -->
     <!-- BOTAO VOLTAR AO TOPO -->
     <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo da página">
         <span aria-hidden="true">↑</span>
     </button>
 
+    <!--
+        ============================================================
+        JAVASCRIPT — Lógica interativa do site
+        ============================================================
+        Carrega o arquivo js/script.js no final da página.
+
+          • src="js/script.js": caminho do arquivo (externo, conforme
+            regulamento que proíbe JS inline)
+
+          • defer: o navegador BAIXA o JS enquanto carrega o HTML,
+            mas só EXECUTA depois que o HTML termina. Isso evita
+            travamentos e melhora a performance.
+
+        O arquivo script.js contém ~4.000 linhas organizadas em
+        módulos (jogo, simulador, quiz, comparador, conquistas,
+        tour guiado, busca, tema escuro, animações, etc.).
+    -->
     <script src="js/script.js" defer></script>
 </body>
 </html>
