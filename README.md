@@ -18,6 +18,8 @@ _Site interativo educacional para o Concurso Agrinho 2026_
 [![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/Progressive_web_apps)
 ![Status](https://img.shields.io/badge/Status-Pronto%20para%20Concurso-success?style=for-the-badge)
 [![Concurso](https://img.shields.io/badge/Agrinho-2026-green?style=for-the-badge)](https://www.sistemafaep.org.br/agrinho/)
+![Versão](https://img.shields.io/badge/Versão-1.4.0-blue?style=for-the-badge)
+![Licença](https://img.shields.io/badge/Licença-MIT-yellow?style=for-the-badge)
 
 <br>
 
@@ -25,6 +27,13 @@ _Site interativo educacional para o Concurso Agrinho 2026_
 ![Lighthouse Accessibility](https://img.shields.io/badge/Lighthouse%20Accessibility-100-brightgreen?style=flat-square&logo=lighthouse&logoColor=white)
 ![Lighthouse Best Practices](https://img.shields.io/badge/Lighthouse%20Best%20Practices-100-brightgreen?style=flat-square&logo=lighthouse&logoColor=white)
 ![Lighthouse SEO](https://img.shields.io/badge/Lighthouse%20SEO-100-brightgreen?style=flat-square&logo=lighthouse&logoColor=white)
+
+<br>
+
+![Responsivo](https://img.shields.io/badge/Responsivo-320px_até_4K-purple?style=flat-square&logo=responsive&logoColor=white)
+![PWA Ready](https://img.shields.io/badge/PWA-Instalável_e_Offline-5A0FC8?style=flat-square&logo=pwa&logoColor=white)
+![Acessibilidade](https://img.shields.io/badge/WCAG-2.1_AA-orange?style=flat-square&logo=accessibility&logoColor=white)
+![Cross Browser](https://img.shields.io/badge/Cross_Browser-Chrome_Firefox_Safari_Edge-informational?style=flat-square)
 
 </div>
 
@@ -58,6 +67,7 @@ Site interativo educacional desenvolvido para o **Concurso Agrinho 2026**, na **
 - [📸 Capturas de Tela](#-capturas-de-tela)
 - [⚙️ Otimizações Técnicas](#️-otimizações-técnicas)
 - [🔦 Auditoria Lighthouse](#-auditoria-lighthouse)
+- [📱 Cobertura Responsiva Universal](#-cobertura-responsiva-universal)
 - [🚀 Como Executar](#-como-executar)
 - [✅ Conformidade com o Regulamento](#-conformidade-com-o-regulamento)
 - [🌐 Compatibilidade](#-compatibilidade)
@@ -648,6 +658,49 @@ O projeto passou por uma auditoria rigorosa com a ferramenta **Lighthouse** (Goo
 | **Agro Forte** | **96** 🟢 | **100** 🏆 | **100** 🏆 | **100** 🏆 |
 
 > 🎓 Sites comerciais grandes raramente atingem 100 em Accessibility, Best Practices E SEO simultaneamente. Este projeto está acima do padrão profissional em 3 das 4 categorias técnicas.
+
+---
+
+## 📱 Cobertura Responsiva Universal
+
+O projeto foi desenvolvido com filosofia **mobile-first** e testado em uma ampla gama de dispositivos reais e simulados. A meta foi garantir **funcionamento perfeito de 320px (iPhone SE original) até 4K (2560px+)**.
+
+### 🎯 Breakpoints implementados
+
+| Faixa | Dispositivos cobertos | Foco da otimização |
+| :--- | :--- | :--- |
+| **< 360px**   | iPhone SE (1ª geração), Android antigos | Botões empilhados, padding mínimo |
+| **360-400px** | Galaxy Z Fold 5, celulares compactos | Fontes fluidas (`clamp()`), grids reduzidos |
+| **400-600px** | iPhones modernos, Galaxy S22, etc. | Hero empilhado, formulários full-width |
+| **600-1024px** | Tablets verticais (iPad mini, Galaxy Tab) | Grids adaptados, hero compacto |
+| **1024-1440px** | Notebooks comuns, iPad Pro | Layout padrão otimizado |
+| **1440-1920px** | Monitores HD e FullHD | Container 1320px, hero 85vh |
+| **1920px+**    | Monitores 4K, telas grandes | Container 1500px, fonte base 17px |
+
+### 📊 Dispositivos reais testados
+
+| Dispositivo | Resolução | Sistema | Status |
+| :--- | :---: | :--- | :---: |
+| iPhone SE | 375×667 | iOS | ✅ |
+| Samsung Galaxy S8+ | 360×740 | Android | ✅ |
+| Galaxy Z Fold 5 (capa) | 344×882 | Android | ✅ |
+| iPad Mini | 768×1024 | iPadOS | ✅ |
+| Notebook | 1280×720 | Windows | ✅ |
+| Desktop FullHD | 1920×1080 | Windows | ✅ |
+| Monitor 4K | 2560×1440 | Windows | ✅ |
+
+### 🛡️ Garantias responsivas universais
+
+- ✅ **Zero overflow horizontal** em qualquer resolução (`html, body { overflow-x: hidden; max-width: 100vw }`)
+- ✅ **Mídia adaptativa**: imagens, SVGs, vídeos e iframes sempre dentro do container (`max-width: 100%`)
+- ✅ **Tabelas roláveis** em mobile (overflow-x: auto)
+- ✅ **Labels adaptativos**: textos longos em desktop, compactos em mobile
+- ✅ **Botões flutuantes inteligentes**: nunca cobrem o conteúdo principal
+- ✅ **Cards de calculadora**: badge no canto em mobile, em linha em desktop
+- ✅ **Tipografia fluida**: uso de `clamp()` para escalar tamanhos suavemente
+- ✅ **Grids responsivos**: `auto-fit` com `minmax()` em todos os layouts
+
+> 💡 **Filosofia:** o site deve funcionar perfeitamente em qualquer dispositivo do mundo — de um celular antigo de 320px a um monitor 4K corporativo. Cobertura responsiva é compromisso com acessibilidade real.
 
 ---
 
