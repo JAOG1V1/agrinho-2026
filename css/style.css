@@ -1234,8 +1234,37 @@ body.tema-escuro .rodape {
 .rodape-creditos {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 1.5rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
+}
+
+/* Mobile: espaço extra no final do site pra botões flutuantes não cobrirem o rodapé */
+@media (max-width: 968px) {
+    body {
+        padding-bottom: 5rem;
+    }
+
+    .rodape-creditos {
+        padding-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Mobile pequeno: ainda mais espaço (acessibility bar + back to top) */
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 6rem;
+    }
+
+    /* Botão voltar ao topo: posição ajustada pra não colar na barra de acessibilidade */
+    .voltar-topo {
+        bottom: 5rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
 }
 
 /* ===== ANIMACOES DE ENTRADA ===== */
