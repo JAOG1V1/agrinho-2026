@@ -1497,20 +1497,33 @@ body.tema-escuro .rodape {
     visibility: hidden;
 }
 
-.tela-carregamento .logo-carregamento {
-    font-size: 5rem;
-    animation: pulsar 1.5s ease-in-out infinite, girarLeve 4s linear infinite;
+/* Loader giratório (substitui o emoji anterior) — 100% CSS, sem imagens */
+.tela-carregamento .loader-spinner {
+    width: 70px;
+    height: 70px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-right-color: var(--dourado-claro);
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 0.5rem;
 }
 
-@keyframes pulsar {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+@keyframes girar {
+    to { transform: rotate(360deg); }
 }
 
-@keyframes girarLeve {
-    0% { transform: rotate(-5deg); }
-    50% { transform: rotate(5deg); }
-    100% { transform: rotate(-5deg); }
+/* Wordmark "AgroForte" na tela de carregamento — adapta cor pro fundo verde escuro */
+.tela-carregamento .logo-marca .logo-bold {
+    color: white;
+}
+
+.tela-carregamento .logo-marca .logo-italic {
+    color: var(--dourado-claro);
+}
+
+.tela-carregamento .logo-marca .logo-italic::after {
+    background: linear-gradient(90deg, transparent, var(--dourado-claro));
 }
 
 .tela-carregamento h1,
