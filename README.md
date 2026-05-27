@@ -18,7 +18,7 @@ _Site interativo educacional para o Concurso Agrinho 2026_
 [![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/Progressive_web_apps)
 ![Status](https://img.shields.io/badge/Status-Pronto%20para%20Concurso-success?style=for-the-badge)
 [![Concurso](https://img.shields.io/badge/Agrinho-2026-green?style=for-the-badge)](https://www.sistemafaep.org.br/agrinho/)
-![Versão](https://img.shields.io/badge/Versão-1.5.0-blue?style=for-the-badge)
+![Versão](https://img.shields.io/badge/Versão-1.6.0-blue?style=for-the-badge)
 ![Licença](https://img.shields.io/badge/Licença-MIT-yellow?style=for-the-badge)
 
 <br>
@@ -129,7 +129,7 @@ O site demonstra que **é possível produzir alimentos sem destruir a natureza**
 | **Tour Guiado**         | Sistema de onboarding para primeira visita com 5 passos interativos                                             |
 | **Indicador de Progresso** | Barra de scroll em tempo real no topo da página                                                              |
 | **Web APIs nativas**    | localStorage, Web Audio API, Speech Synthesis API, Web Share API, Service Workers, Intersection Observer, Clipboard API, View Transitions |
-| **Google Fonts**        | Tipografias Playfair Display (serifa elegante) e Poppins (sans-serif moderna)                                   |
+| **Tipografias**         | Playfair Display (serifa elegante) e Poppins (sans-serif moderna), hospedadas localmente em `/fonts`            |
 
 > ⚠️ **Projeto desenvolvido sem o uso de frameworks**, em total conformidade com o item 6.1.15 do regulamento do concurso. Service Workers e PWA são APIs nativas dos navegadores (não são frameworks).
 
@@ -152,12 +152,22 @@ Agrinho 2026/
 │   └── 404.html           # Página de erro personalizada
 │
 ├── 📁 css/
-│   └── style.css          # ~5.371 linhas organizado por seções
+│   └── style.css          # ~6.000 linhas organizado por seções
 │
 ├── 📁 js/
-│   └── script.js          # ~3.885 linhas, 27+ módulos, 108+ funções
+│   └── script.js          # ~4.000 linhas, 27+ módulos, 108+ funções
 │
-├── ⚙️  sw.js               # Service Worker (cache offline)
+├── 📁 fonts/              # NOVA — Fontes self-hosted (conformidade reg. retificado)
+│   ├── playfair-display-v40-latin_latin-ext-600.woff2   # SemiBold
+│   ├── playfair-display-v40-latin_latin-ext-700.woff2   # Bold
+│   ├── playfair-display-v40-latin_latin-ext-800.woff2   # ExtraBold
+│   ├── poppins-v24-latin_latin-ext-300.woff2            # Light
+│   ├── poppins-v24-latin_latin-ext-regular.woff2        # Regular
+│   ├── poppins-v24-latin_latin-ext-500.woff2            # Medium
+│   ├── poppins-v24-latin_latin-ext-600.woff2            # SemiBold
+│   └── poppins-v24-latin_latin-ext-700.woff2            # Bold
+│
+├── ⚙️  sw.js               # Service Worker (cache offline, incluindo fontes)
 ├── 📱 manifest.json       # Configuração PWA (app installable)
 ├── 🗺️  sitemap.xml          # Mapa do site para SEO
 ├── 🤖 robots.txt           # Instruções para crawlers
@@ -647,7 +657,7 @@ O projeto passou por uma auditoria rigorosa com a ferramenta **Lighthouse** (Goo
 - Sem JavaScript bloqueante (TBT 0ms)
 - Render imediato (FCP 0.6s)
 
-> 💡 **Sobre o Performance 96 (e não 100):** os 4 pontos faltantes vêm de **Render-blocking requests** (Google Fonts + CSS) — esperado em qualquer site que use fontes externas. No GitHub Pages com gzip+CDN, este score sobe para 98-100.
+> 💡 **Sobre o Performance 96 (e não 100):** os 4 pontos faltantes vêm de **Render-blocking requests** (CSS) — esperado em qualquer site. Com as fontes agora self-hosted em `/fonts` (sem dependência do Google), o site funciona 100% offline e tem privacidade reforçada.
 
 ### 🆚 Comparação com sites comerciais
 
@@ -885,7 +895,7 @@ A tecnologia, no fim das contas, é só uma ferramenta. O que importa é o que a
 
 ## 🎨 Créditos
 
-- **Tipografias:** Google Fonts — Playfair Display (Claus Eggers Sørensen) e Poppins (Indian Type Foundry)
+- **Tipografias:** Playfair Display (Claus Eggers Sørensen) e Poppins (Indian Type Foundry) — **self-hosted** em `/fonts` para conformidade com regulamento retificado e funcionamento 100% offline. Créditos aos designers originais.
 - **Ilustrações SVG:** Criadas autoralmente para este projeto (hero, mapa do Brasil, cenário do jogo, comparador antes/depois, ícones decorativos)
 - **Ícones:** Emojis Unicode padrão
 - **Conteúdo textual:** 100% autoral, baseado em dados públicos do agronegócio brasileiro (EMBRAPA, SENAR, MAPA)
