@@ -4,8 +4,87 @@
    Autor: Estudante
    ============================================ */
 
-/* Importação de fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ============================================
+   FONTES SELF-HOSTED — Playfair Display + Poppins
+   ============================================
+   As fontes estão hospedadas LOCALMENTE em /fonts.
+   Isso garante conformidade total com o regulamento
+   retificado do Agrinho 2026 (item 6.1.15), que veda
+   o uso de bibliotecas externas.
+
+   • font-display: swap → evita FOIT (Flash of Invisible
+     Text). Mostra fonte de fallback enquanto a custom
+     carrega, evitando "salto" visual.
+
+   • Caminho ../fonts/ → o CSS está em /css, então sobe
+     um nível e entra em /fonts.
+   ============================================ */
+
+/* Playfair Display — Serifa elegante (títulos) */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/playfair-display-v40-latin_latin-ext-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/playfair-display-v40-latin_latin-ext-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('../fonts/playfair-display-v40-latin_latin-ext-800.woff2') format('woff2');
+}
+
+/* Poppins — Sans-serif moderna (corpo do texto) */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('../fonts/poppins-v24-latin_latin-ext-300.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/poppins-v24-latin_latin-ext-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/poppins-v24-latin_latin-ext-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/poppins-v24-latin_latin-ext-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/poppins-v24-latin_latin-ext-700.woff2') format('woff2');
+}
 
 /* ============================================
    VARIÁVEIS CSS (CUSTOM PROPERTIES)
