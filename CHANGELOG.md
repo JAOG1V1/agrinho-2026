@@ -4,6 +4,81 @@ Histórico de evolução do projeto desde sua concepção. Segue o formato [Keep
 
 ---
 
+## [1.6.0] — 2026-05-27 — Conformidade com Regulamento Retificado 📜🔒
+
+### 🎯 Objetivo
+
+Adequar o projeto ao **regulamento retificado do Concurso Agrinho 2026** publicado em **21/05/2026**, que ampliou o item 6.1.15 para incluir explicitamente **bibliotecas** (além de frameworks) na lista de itens vedados.
+
+**Mudança no regulamento:**
+- **Antes (10/04/2026):** "Não serão aceitos Merge de repositórios nem a utilização de frameworks."
+- **Depois (21/05/2026):** "Não serão aceitos Merge de repositórios nem a utilização de **bibliotecas e/ou frameworks**."
+
+### 🔧 Modificado
+
+- **Fontes self-hosted** — Playfair Display e Poppins agora hospedadas localmente em `/fonts`, eliminando dependência externa do Google Fonts (zona de risco com regulamento retificado)
+- Adequação completa ao **regulamento retificado** do Concurso Agrinho 2026 (item 6.1.15)
+- Service Worker atualizado para `v2` (invalida cache antigo automaticamente)
+
+### ✨ Adicionado
+
+- 📁 **Pasta `/fonts`** com 8 arquivos `.woff2`:
+  - Playfair Display em 3 pesos (600, 700, 800)
+  - Poppins em 5 pesos (300, 400, 500, 600, 700)
+- 📝 **8 declarações `@font-face`** no topo do `css/style.css` apontando para arquivos locais
+- 🔌 **Service Worker** atualizado para cachear as 8 fontes (funcionamento offline aprimorado)
+- 📖 Documentação atualizada em README sobre o self-hosting das fontes
+
+### ❌ Removido
+
+- ❌ **`@import` do Google Fonts** (linha 8 do `css/style.css`)
+  - Antes: `@import url('https://fonts.googleapis.com/css2?family=Playfair+Display...')`
+  - Depois: 8 declarações `@font-face` apontando para `/fonts/*.woff2`
+
+### 🎯 Benefícios
+
+- ✅ **100% conforme** com regulamento retificado (item 6.1.15)
+- ⚡ **Performance melhorada** — 1 requisição externa a menos
+- 🔌 **Funcionamento offline aprimorado** — fontes incluídas no cache do Service Worker
+- 🔒 **Privacidade reforçada** — sem envio de IP do usuário ao Google
+- 🌐 **Independência total** de servidores externos
+- 🇪🇺 **Conformidade GDPR/LGPD** reforçada (sem rastreamento por CDN externo)
+
+### 🔧 Técnico
+
+- `css/style.css`: +85 linhas (8 `@font-face` + comentários educativos), -1 linha (`@import` removido)
+- `sw.js`: cache atualizado para `v2` com 8 fontes adicionadas
+- `README.md`: tabela de tecnologias, seção de estrutura e créditos atualizados
+- Zero recursos externos no projeto agora (exceto links de navegação para sites do concurso no README)
+
+### 🔒 Verificação técnica final
+
+| Critério | Status |
+| :--- | :---: |
+| 0 frameworks | ✅ |
+| 0 bibliotecas JavaScript externas | ✅ |
+| 0 bibliotecas CSS externas | ✅ |
+| 0 `@import` de fontes externas (Google Fonts removido) | ✅ |
+| Fontes hospedadas localmente em `/fonts` | ✅ |
+| Service Worker cacheia as 8 fontes | ✅ |
+| `font-display: swap` em todas as `@font-face` (evita FOIT) | ✅ |
+| 14/14 itens de conformidade do regulamento | ✅ |
+
+### 📊 Auditoria de conformidade (pós-retificação 21/05/2026)
+
+```
+ANTES desta versão:
+  ⚠️ 13/14 critérios conformes
+  ⚠️ Google Fonts via CDN externo (risco médio 15-25%)
+
+DEPOIS desta versão:
+  ✅ 14/14 critérios conformes
+  ✅ 0 dependências externas
+  ✅ Conformidade total com regulamento retificado
+```
+
+---
+
 ## [1.5.0] — 2026-05-25 — Refresh Visual e Documentação Inline 🎨📚
 
 ### 🎯 Objetivo
