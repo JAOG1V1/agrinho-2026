@@ -4078,6 +4078,13 @@ body.tema-escuro .tag-pratica {
     margin-bottom: 0.5rem;
 }
 
+/* Reduz o icone de fim de jogo no overlay (5rem era grande demais e era cortado) */
+.jogo-overlay .icone-medio-margin {
+    font-size: 3rem;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+}
+
 .subtitulo-margem {
     margin-bottom: 1rem;
 }
