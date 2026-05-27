@@ -1963,7 +1963,18 @@ function renderizarPainelConquistas() {
 function rastrearInteracoes() {
     // Identifica página atual
     const caminho = window.location.pathname;
-    const arquivo = caminho.substring(caminho.lastIndexOf('/') + 1);
+    let arquivo = caminho.substring(caminho.lastIndexOf('/') + 1);
+
+    // Normaliza: raiz do site ("" ou "/") = index.html
+    if (arquivo === '' || arquivo === '/') {
+        arquivo = 'index.html';
+    }
+
+    // Lista oficial de 8 páginas do site (não conta 404.html nem outras)
+    const paginasOficiais = [
+        'index.html', 'sobre.html', 'praticas.html', 'simulador.html',
+        'quiz.html', 'jogo.html', 'glossario.html', 'contato.html'
+    ];
 
     // Salva páginas visitadas
     let visitadas = [];
@@ -1976,23 +1987,36 @@ function rastrearInteracoes() {
         }
     }
 
-    if (visitadas.indexOf(arquivo) === -1) {
-        visitadas.push(arquivo);
-        localStorage.setItem('agrinho-paginas-visitadas', JSON.stringify(visitadas));
+    // Limpeza: remove entradas inválidas que possam ter sido salvas em versões antigas
+    // (string vazia, 404.html, ou qualquer página fora da lista oficial)
+    const visitadasLimpas = visitadas.filter(function(p) {
+        return paginasOficiais.indexOf(p) !== -1;
+    });
+
+    // Adiciona página atual se for oficial e ainda não registrada
+    if (paginasOficiais.indexOf(arquivo) !== -1 && visitadasLimpas.indexOf(arquivo) === -1) {
+        visitadasLimpas.push(arquivo);
+    }
+
+    // Salva de volta (corrige listas antigas com lixo)
+    if (visitadasLimpas.length !== visitadas.length ||
+        visitadasLimpas.some(function(p, i) { return p !== visitadas[i]; })) {
+        localStorage.setItem('agrinho-paginas-visitadas', JSON.stringify(visitadasLimpas));
     }
 
     // Conquistas específicas por página
-    if (arquivo === 'glossario.html' || arquivo.includes('glossario')) {
+    if (arquivo === 'glossario.html' || arquivo.indexOf('glossario') !== -1) {
         desbloquearConquista('estudante');
     }
 }
 
 function verificarExplorador() {
-    const paginasNecessarias = ['index.html', 'sobre.html', 'praticas.html', 'simulador.html', 'quiz.html', 'glossario.html', 'contato.html'];
+    // 8 páginas oficiais — sincronizado com rastrearInteracoes() e totalPaginas
+    const paginasNecessarias = ['index.html', 'sobre.html', 'praticas.html', 'simulador.html', 'quiz.html', 'jogo.html', 'glossario.html', 'contato.html'];
     const visitadas = JSON.parse(localStorage.getItem('agrinho-paginas-visitadas') || '[]');
 
     const visitouTodas = paginasNecessarias.every(function(p) {
-        return visitadas.indexOf(p) !== -1 || (p === 'index.html' && visitadas.indexOf('') !== -1);
+        return visitadas.indexOf(p) !== -1;
     });
 
     if (visitouTodas) {
