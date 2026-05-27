@@ -4,6 +4,91 @@ Histórico de evolução do projeto desde sua concepção. Segue o formato [Keep
 
 ---
 
+## [1.6.2] — 2026-05-27 — Correções no Sistema de Conquistas e Estatísticas 🐛
+
+### 🎯 Objetivo
+
+Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição correta das estatísticas pessoais do usuário no painel da home. Bugs identificados em testes reais de usuário (uso prolongado do site).
+
+### 🐛 Corrigido
+
+#### Bug 1 — Contador de conquistas desatualizado
+- **Sintoma:** Painel "Suas Estatísticas" mostrava `X/10` enquanto "Painel de Conquistas" mostrava `X/15`
+- **Causa:** Constante `totalConquistas: 10` em `obterStatsPessoais()` ficou hardcoded desde a v1.0.0. Na v1.4.0 foram adicionadas 5 conquistas exclusivas do jogo (Combo Mestre, Invencível, Milionário do Agro, Maratonista, Colecionador Pro), totalizando 15. Mas o contador da estatística não foi atualizado junto.
+- **Solução:** Trocar valor fixo por `conquistasDisponiveis.length` (dinâmico). Agora, se novas conquistas forem adicionadas no futuro, o contador atualiza sozinho.
+
+#### Bug 2 — Páginas visitadas ultrapassavam o total (`9/8`)
+- **Sintoma:** Após navegar pelo site no celular, painel mostrava `9/8 páginas visitadas` (impossível)
+- **Causa:** Função `rastrearInteracoes()` salvava qualquer URL como "página visitada", incluindo:
+  - String vazia `""` quando o usuário acessa a raiz do site (`/`)
+  - `404.html` em caso de erro de navegação
+  - Trailing slashes diferentes entre desktop e mobile
+  - Resultado: a raiz era contada como página separada do `index.html`
+- **Solução:** Implementada normalização e validação:
+  - URLs `""` ou `"/"` agora viram `"index.html"` automaticamente
+  - Definida lista oficial de 8 páginas (`paginasOficiais`)
+  - Filtro remove entradas inválidas legacy do `localStorage` (auto-limpeza)
+  - Só registra páginas que pertencem à lista oficial
+
+#### Bug 3 — Conquista "Explorador" inconsistente com painel
+- **Sintoma:** Painel exibia 8 páginas oficiais, mas conquista exigia apenas 7 para desbloquear
+- **Causa:** Função `verificarExplorador()` tinha lista de `paginasNecessarias` sem `jogo.html`
+- **Solução:** Adicionado `jogo.html` à lista. Agora as 3 estruturas estão sincronizadas (rastreamento, total e conquista).
+
+### 🔧 Técnico
+
+#### Arquivos alterados
+
+| Arquivo | Linhas | Tipo |
+| :--- | :---: | :--- |
+| `js/script.js` | 3 funções | bugfix |
+
+#### Funções modificadas em `js/script.js`
+
+```javascript
+// 1. obterStatsPessoais() — linha ~3615
+totalConquistas: (typeof conquistasDisponiveis !== 'undefined'
+                  ? conquistasDisponiveis.length : 15),
+
+// 2. rastrearInteracoes() — linhas ~1963-2010
+// + Normalização de URL raiz
+// + Lista de páginas oficiais
+// + Filtro de entradas inválidas (auto-limpeza)
+
+// 3. verificarExplorador() — linhas ~2013-2024
+// + Inclusão de jogo.html nas páginas necessárias
+```
+
+### 💡 Por que esses bugs aconteceram?
+
+São **bugs de manutenção** clássicos em sistemas que evoluíram. Quando o projeto foi criado (v1.0.0), tinha 10 conquistas e a constante foi escrita à mão. Quando novas funcionalidades foram adicionadas (v1.4.0), um lugar foi atualizado mas outro não.
+
+**Lição aprendida (e aplicada nesta correção):** sempre que possível, derivar valores de fontes únicas dinâmicas (`array.length`) em vez de números fixos. Isso é conhecido como **Single Source of Truth (SSOT)** — um princípio fundamental de engenharia de software.
+
+### ✅ Conformidade com Regulamento
+
+Esta versão **mantém 100% de conformidade** com o Regulamento Agrinho 2026 retificado (21/05/2026):
+
+- ✅ Apenas HTML, CSS e JavaScript puros
+- ✅ Zero frameworks, zero bibliotecas
+- ✅ Zero CSS/JS inline
+- ✅ Todas as fontes self-hosted
+
+### 🧪 Como reproduzir os bugs (antes do fix)
+
+1. **Bug do `10`**: Abrir home → ver "1/10 conquistas" em Suas Estatísticas e "1/15" no Painel de Conquistas → inconsistência clara
+2. **Bug do `9/8`**: Acessar site pela URL raiz (`https://.../agro-forte/`) → clicar em "Início" → estatística pula de 1 para 2 indevidamente
+3. **Bug do Explorador**: Visitar as 8 páginas oficiais → conquista Explorador desbloqueia normalmente, mas inconsistência conceitual existia
+
+### 📊 Impacto
+
+- **Bugs visíveis ao usuário:** corrigidos ✅
+- **Performance:** sem impacto (zero linhas de código adicionais no caminho crítico)
+- **Lighthouse:** sem mudança (continua 400/400 Desktop, 399/400 Mobile)
+- **Service Worker:** não precisou bump de versão (não há novos arquivos no cache)
+
+---
+
 ## [1.6.1] — 2026-05-27 — Pontuação Lighthouse Perfeita 🏆⭐
 
 ### 🎯 Objetivo
