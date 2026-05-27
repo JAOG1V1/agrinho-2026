@@ -457,6 +457,10 @@ Implementação da **View Transitions API** nativa do navegador para uma experi�
 
 </div>
 
+> 📸 **Nota sobre versionamento visual:** algumas capturas foram tiradas em versões anteriores do projeto (entre v1.0.0 e v1.5.0) e podem mostrar pequenas diferenças visuais em relação à versão atual (v1.6.2) — como por exemplo a evolução do logotipo (que migrou de logo gráfico para a tipografia *wordmark* **AgroForte** com Playfair Display Bold + Italic) e refinamentos no mapa interativo do Brasil. A versão atual e mais recente do site está sempre disponível em tempo real no [link oficial de demonstração](https://jaog1v1.github.io/agrinho-2026/).
+>
+> 💡 **Por que mantemos as screenshots antigas?** Manter o histórico visual no README é uma decisão consciente — documenta a evolução do projeto e permite que avaliadores comparem o "antes e depois" das iterações. Todas as funcionalidades demonstradas continuam ativas e melhoradas na versão atual.
+
 ---
 
 ### 🏠 Página Inicial — Dois Temas
