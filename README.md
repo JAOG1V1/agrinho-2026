@@ -18,7 +18,7 @@ _Site interativo educacional para o Concurso Agrinho 2026_
 [![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/Progressive_web_apps)
 ![Status](https://img.shields.io/badge/Status-Pronto%20para%20Concurso-success?style=for-the-badge)
 [![Concurso](https://img.shields.io/badge/Agrinho-2026-green?style=for-the-badge)](https://www.sistemafaep.org.br/agrinho/)
-![Versão](https://img.shields.io/badge/Versão-1.6.1-blue?style=for-the-badge)
+![Versão](https://img.shields.io/badge/Versão-1.6.2-blue?style=for-the-badge)
 ![Licença](https://img.shields.io/badge/Licença-MIT-yellow?style=for-the-badge)
 
 <br>
