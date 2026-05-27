@@ -1816,7 +1816,7 @@ function filtrarGlossario(letra, termoBusca) {
    17. SISTEMA DE CONQUISTAS (BADGES)
    ============================================
    Gamificação inspirada em sistemas de achievements.
-   O usuário desbloqueia 10 conquistas distintas ao
+   O usuário desbloqueia 15 conquistas distintas ao
    interagir com diferentes partes do site:
      - Visitar páginas específicas (rastreado em localStorage)
      - Clicar em elementos-chave (mapa, calculadora, etc.)
@@ -3614,7 +3614,7 @@ function obterStatsPessoais() {
 
     return {
         conquistas: conquistas.length,
-        totalConquistas: 10,
+        totalConquistas: (typeof conquistasDisponiveis !== 'undefined' ? conquistasDisponiveis.length : 15),
         paginasVisitadas: paginasVisitadas.length,
         totalPaginas: 8,
         melhorJogo: melhorJogo,
@@ -3879,7 +3879,7 @@ const passosTour = [
     {
         icone: '🏅',
         titulo: 'Desbloqueie conquistas',
-        texto: 'Explore o site para desbloquear até <span class="destaque-tour">10 medalhas</span>! Acompanhe seu progresso no painel de conquistas da página inicial.'
+        texto: 'Explore o site para desbloquear até <span class="destaque-tour">15 medalhas</span>! Acompanhe seu progresso no painel de conquistas da página inicial.'
     },
     {
         icone: '🌙',
