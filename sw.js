@@ -7,7 +7,8 @@
 'use strict';
 
 // Nome da versão do cache (mudar para invalidar cache antigo)
-const NOME_CACHE = 'agro-forte-v1';
+// v2 — atualizado para incluir as 8 fontes self-hosted (regulamento retificado)
+const NOME_CACHE = 'agro-forte-v2';
 
 // Lista de recursos para guardar no cache (todo o site)
 const RECURSOS_PARA_CACHE = [
@@ -24,7 +25,17 @@ const RECURSOS_PARA_CACHE = [
     './css/style.css',
     './js/script.js',
     './manifest.json',
-    './og-image.svg'
+    './og-image.svg',
+    './favicon.svg',
+    // Fontes self-hosted (Playfair Display + Poppins) — conformidade com regulamento retificado
+    './fonts/playfair-display-v40-latin_latin-ext-600.woff2',
+    './fonts/playfair-display-v40-latin_latin-ext-700.woff2',
+    './fonts/playfair-display-v40-latin_latin-ext-800.woff2',
+    './fonts/poppins-v24-latin_latin-ext-300.woff2',
+    './fonts/poppins-v24-latin_latin-ext-regular.woff2',
+    './fonts/poppins-v24-latin_latin-ext-500.woff2',
+    './fonts/poppins-v24-latin_latin-ext-600.woff2',
+    './fonts/poppins-v24-latin_latin-ext-700.woff2'
 ];
 
 // EVENTO INSTALL: dispara quando o SW é instalado pela primeira vez
