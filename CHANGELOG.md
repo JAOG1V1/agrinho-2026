@@ -4,11 +4,11 @@ Histórico de evolução do projeto desde sua concepção. Segue o formato [Keep
 
 ---
 
-## [1.6.2] — 2026-05-27 — Correções no Sistema de Conquistas e Ajuste de Contato 🐛
+## [1.6.2] — 2026-05-27 — Correções, Ajuste de Contato e Guia de Contribuição 🐛
 
 ### 🎯 Objetivo
 
-Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição correta das estatísticas pessoais do usuário no painel da home (identificados em testes reais de usuário), além de ajustar o destinatário do formulário de contato para o e-mail do desenvolvedor.
+Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição correta das estatísticas pessoais do usuário no painel da home (identificados em testes reais de usuário), ajustar o destinatário do formulário de contato para o e-mail do desenvolvedor e adicionar documentação profissional de contribuição ao projeto.
 
 ### 🐛 Corrigido
 
@@ -35,6 +35,19 @@ Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição corr
 - **Causa:** Função `verificarExplorador()` tinha lista de `paginasNecessarias` sem `jogo.html`
 - **Solução:** Adicionado `jogo.html` à lista. Agora as 3 estruturas estão sincronizadas (rastreamento, total e conquista).
 
+### ➕ Adicionado
+
+- 🤝 **`CONTRIBUTING.md` — Guia de Contribuição profissional**
+  - Documenta as práticas de desenvolvimento adotadas no projeto e prepara a base para colaboração aberta após o concurso
+  - Seções: como reportar bugs, sugerir funcionalidades, fluxo de Pull Requests, padrão de commits (Conventional Commits)
+  - **Padrões de código** específicos para HTML, CSS e JavaScript — incluindo as variáveis CSS reais do projeto (`--verde-escuro`, `--bg-card`, `--raio`, etc.) e o estilo de funções vanilla (não classes)
+  - **Checklist de conformidade com o regulamento** Agrinho 2026 (zero frameworks, zero bibliotecas, zero código inline)
+  - Nota de contexto explicando que, durante o concurso, o projeto é mantido **individualmente** (exigência de autoria)
+  - Cria automaticamente a aba "Contributing" na interface do GitHub
+- 📖 **Seção "Como Contribuir" no `README.md`**
+  - Adicionada ao sumário e ao corpo do documento, com link para o `CONTRIBUTING.md`
+  - `CONTRIBUTING.md` incluído na árvore de estrutura do projeto
+
 ### 🔄 Alterado
 
 - 📧 **Destinatário do formulário de contato**
@@ -47,9 +60,11 @@ Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição corr
 
 #### Arquivos alterados
 
-| Arquivo | Linhas | Tipo |
+| Arquivo | Alteração | Tipo |
 | :--- | :---: | :--- |
 | `js/script.js` | 3 funções + 1 constante | bugfix + config |
+| `CONTRIBUTING.md` | arquivo novo | documentação |
+| `README.md` | sumário + estrutura + seção | documentação |
 
 #### Funções modificadas em `js/script.js`
 
