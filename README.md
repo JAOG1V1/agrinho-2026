@@ -74,6 +74,7 @@ Site interativo educacional desenvolvido para o **Concurso Agrinho 2026**, na **
 - [🏆 Sobre o Concurso](#-sobre-o-concurso)
 - [💭 Reflexão do Estudante](#-reflexão-do-estudante)
 - [🎨 Créditos](#-créditos)
+- [🤝 Como Contribuir](#-como-contribuir)
 - [📜 Licença](#-licença)
 - [📝 Histórico](CHANGELOG.md) _(arquivo separado)_
 
@@ -174,6 +175,7 @@ Agrinho 2026/
 ├── 🖼️  og-image.svg          # Imagem de preview para redes sociais
 ├── 🔧 .editorconfig        # Padronização de estilo de código
 ├── 📝 CHANGELOG.md        # Histórico de versões
+├── 🤝 CONTRIBUTING.md     # Guia de contribuição e padrões de código
 └── 📖 README.md           # Este arquivo (documentação)
 ```
 
@@ -289,18 +291,30 @@ Botões "Compartilhar" no resultado do quiz, jogo e simulador, usando a **Web Sh
 
 ---
 
-### ♿ Acessibilidade Completa
+### ♿ Recursos de Acessibilidade
 
-- **3 níveis de tamanho de fonte** ajustáveis
-- **Modo alto contraste** (preto/amarelo/verde)
-- **Skip link** para pular ao conteúdo principal
+O projeto foi construído seguindo as diretrizes **WCAG 2.1** e contempla diferentes necessidades. Abaixo, os recursos organizados pelo público que beneficiam:
+
+**Para usuários cegos ou com baixa visão (leitores de tela):**
 - **125+ atributos `aria-label`** em elementos interativos
-- **Navegação completa por teclado** com focus visível
-- **Síntese de voz** nas perguntas do quiz
-- **Suporte a `prefers-reduced-motion`**
-- **Preferências salvas** no `localStorage`
-- **Aviso para usuários sem JavaScript** — banner informativo `<noscript>` exibido caso o JS esteja desabilitado, garantindo que o usuário entenda o estado da página e o que precisa fazer para a experiência completa
-- **`role="status"` + `aria-live="polite"`** na tela de carregamento para leitores de tela
+- **Navegação completa por teclado** com indicador de foco visível
+- **Skip link** para pular direto ao conteúdo principal
+- **`role="status"` + `aria-live="polite"`** para anúncios dinâmicos
+- **Modo alto contraste** (preto/amarelo/verde)
+- **3 níveis de tamanho de fonte** ajustáveis
+
+**Para usuários com dislexia ou dificuldade de leitura:**
+- **Síntese de voz** que lê as perguntas do quiz em voz alta
+- **Fonte ampliável** e **alto contraste** para reduzir a fadiga visual
+
+**Para usuários com sensibilidade a movimento:**
+- **Suporte a `prefers-reduced-motion`** (reduz animações conforme a preferência do sistema)
+
+**Recursos gerais:**
+- **Preferências salvas** no `localStorage` (persistem entre visitas)
+- **Banner `<noscript>`** informativo caso o JavaScript esteja desabilitado
+
+> ⚠️ **Nota de transparência:** os recursos acima seguem boas práticas de acessibilidade, mas o projeto **não foi testado com usuários reais com deficiência** nem auditado por especialistas. Por isso, evitamos afirmar "acessibilidade completa" — há sempre espaço para melhorias, e essa honestidade faz parte de um desenvolvimento responsável.
 
 ---
 
@@ -922,6 +936,24 @@ A tecnologia, no fim das contas, é só uma ferramenta. O que importa é o que a
 - **Ícones:** Emojis Unicode padrão
 - **Conteúdo textual:** 100% autoral, baseado em dados públicos do agronegócio brasileiro (EMBRAPA, SENAR, MAPA)
 - **Paleta de cores:** Inspirada nos tons da natureza brasileira (verde-mata, terra, dourado-trigo)
+
+---
+
+## 🤝 Como Contribuir
+
+Este projeto segue boas práticas de projetos de código aberto e conta com um guia de contribuição completo.
+
+> 📌 **Durante o período do Concurso Agrinho 2026**, o projeto é mantido **individualmente** pelo autor, conforme exigência do regulamento (trabalho autoral). O guia de contribuição documenta os padrões de desenvolvimento adotados e deixa a base preparada para colaboração aberta **após o encerramento do concurso**.
+
+O **[CONTRIBUTING.md](./CONTRIBUTING.md)** detalha:
+
+- 🐛 Como reportar bugs e sugerir funcionalidades
+- 🔀 Fluxo de Pull Requests e padrão de commits (Conventional Commits)
+- 📋 Padrões de código para HTML, CSS e JavaScript (com as variáveis CSS do projeto)
+- ✅ Checklist de conformidade com o regulamento (zero frameworks, zero bibliotecas, zero inline)
+- 🎯 Prioridades de contribuição e o que evitar
+
+👉 **Leia o guia completo em [CONTRIBUTING.md](./CONTRIBUTING.md)**
 
 ---
 
