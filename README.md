@@ -74,6 +74,7 @@ Site interativo educacional desenvolvido para o **Concurso Agrinho 2026**, na **
 - [🏆 Sobre o Concurso](#-sobre-o-concurso)
 - [💭 Reflexão do Estudante](#-reflexão-do-estudante)
 - [🎨 Créditos](#-créditos)
+- [🤖 Transparência e Ferramentas](#-transparência-e-ferramentas-utilizadas)
 - [🤝 Como Contribuir](#-como-contribuir)
 - [📜 Licença](#-licença)
 - [📝 Histórico](CHANGELOG.md) _(arquivo separado)_
@@ -932,10 +933,41 @@ A tecnologia, no fim das contas, é só uma ferramenta. O que importa é o que a
 ## 🎨 Créditos
 
 - **Tipografias:** Playfair Display (Claus Eggers Sørensen) e Poppins (Indian Type Foundry) — **self-hosted** em `/fonts` para conformidade com regulamento retificado e funcionamento 100% offline. Créditos aos designers originais.
-- **Ilustrações SVG:** Criadas autoralmente para este projeto (hero, mapa do Brasil, cenário do jogo, comparador antes/depois, ícones decorativos)
+- **Ilustrações SVG:** Criadas via código no próprio projeto (hero, mapa do Brasil, cenário do jogo, comparador antes/depois, ícones decorativos) — sem imagens externas ou geradores de imagem. Detalhes na seção [Transparência](#-transparência-e-ferramentas-utilizadas).
 - **Ícones:** Emojis Unicode padrão
-- **Conteúdo textual:** 100% autoral, baseado em dados públicos do agronegócio brasileiro (EMBRAPA, SENAR, MAPA)
+- **Conteúdo textual:** Autoral, escrito com base em dados públicos do agronegócio brasileiro (EMBRAPA, SENAR, MAPA)
 - **Paleta de cores:** Inspirada nos tons da natureza brasileira (verde-mata, terra, dourado-trigo)
+
+---
+
+## 🤖 Transparência e Ferramentas Utilizadas
+
+Acredito que a transparência faz parte de um desenvolvimento responsável. Por isso, declaro abertamente como este projeto foi construído — prática alinhada ao componente curricular **"Programação e IA"** do Concurso Agrinho 2026.
+
+Este site foi desenvolvido por mim, **João Gabriel Sabedra Vieira**, com auxílio de uma ferramenta de Inteligência Artificial (**Claude**, da Anthropic) como apoio ao aprendizado e à implementação.
+
+### ✍️ De minha autoria
+
+- A **ideia, o tema e a direção** do projeto
+- Os **textos do site**, pesquisados em fontes públicas (EMBRAPA, SENAR, MAPA) e escritos com minhas próprias palavras
+- As **ilustrações vetoriais (SVG)**, criadas via código no próprio projeto — sem uso de imagens externas ou geradores de imagem
+- As **decisões de design**, estrutura, funcionalidades e paleta de cores
+- Os **testes** em diferentes dispositivos e a identificação dos bugs corrigidos
+
+### 🤝 Onde utilizei IA como ferramenta de apoio
+
+- Escrita e revisão de trechos de código (HTML, CSS, JavaScript)
+- Auxílio na depuração dos bugs que identifiquei durante os testes
+- Organização e revisão da documentação (README, CHANGELOG, CONTRIBUTING)
+- Sugestões de boas práticas de acessibilidade e performance
+
+### 💬 Exemplos de prompts utilizados
+
+- _"Como criar um mini-jogo de defender plantações usando Canvas em JavaScript puro?"_
+- _"Revise este código JavaScript e aponte possíveis bugs."_
+- _"Como hospedar fontes localmente sem usar bibliotecas externas?"_
+
+> 🛠️ **Outras ferramentas:** Visual Studio Code (editor) e Git/GitHub (versionamento).
 
 ---
 
