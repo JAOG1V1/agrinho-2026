@@ -626,7 +626,8 @@ function inicializarFormulario() {
         // Se passou em tudo, ENVIA de verdade via mailto:
         if (!temErro) {
             // Monta a mensagem formatada
-            const destinatario = 'agrinhoprogramacao@escola.pr.gov.br';
+            // Destinatário: e-mail do desenvolvedor (autor do site)
+            const destinatario = 'joaogabrielsabedra@gmail.com';
             const titulosAssunto = {
                 'duvida': 'Dúvida sobre o concurso',
                 'sugestao': 'Sugestão de prática sustentável',
