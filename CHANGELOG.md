@@ -4,11 +4,11 @@ Histórico de evolução do projeto desde sua concepção. Segue o formato [Keep
 
 ---
 
-## [1.6.2] — 2026-05-27 — Correções no Sistema de Conquistas e Estatísticas 🐛
+## [1.6.2] — 2026-05-27 — Correções no Sistema de Conquistas e Ajuste de Contato 🐛
 
 ### 🎯 Objetivo
 
-Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição correta das estatísticas pessoais do usuário no painel da home. Bugs identificados em testes reais de usuário (uso prolongado do site).
+Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição correta das estatísticas pessoais do usuário no painel da home (identificados em testes reais de usuário), além de ajustar o destinatário do formulário de contato para o e-mail do desenvolvedor.
 
 ### 🐛 Corrigido
 
@@ -35,13 +35,21 @@ Corrigir 3 bugs sutis no sistema de gamificação que afetavam a exibição corr
 - **Causa:** Função `verificarExplorador()` tinha lista de `paginasNecessarias` sem `jogo.html`
 - **Solução:** Adicionado `jogo.html` à lista. Agora as 3 estruturas estão sincronizadas (rastreamento, total e conquista).
 
+### 🔄 Alterado
+
+- 📧 **Destinatário do formulário de contato**
+  - Antes: `agrinhoprogramacao@escola.pr.gov.br` (e-mail oficial do concurso)
+  - Depois: `joaogabrielsabedra@gmail.com` (e-mail do desenvolvedor/autor do site)
+  - **Motivo:** As mensagens enviadas pelo formulário do site devem chegar ao próprio autor (que mantém e responde), e não à caixa oficial de inscrições do concurso. O e-mail oficial do concurso permanece exibido no card "Informações" da página de contato como referência pública.
+  - **Tecnologia:** mantém o uso de `mailto:` (sem backend) — em conformidade com o regulamento. A mensagem é montada no cliente de e-mail do próprio visitante.
+
 ### 🔧 Técnico
 
 #### Arquivos alterados
 
 | Arquivo | Linhas | Tipo |
 | :--- | :---: | :--- |
-| `js/script.js` | 3 funções | bugfix |
+| `js/script.js` | 3 funções + 1 constante | bugfix + config |
 
 #### Funções modificadas em `js/script.js`
 
@@ -57,6 +65,9 @@ totalConquistas: (typeof conquistasDisponiveis !== 'undefined'
 
 // 3. verificarExplorador() — linhas ~2013-2024
 // + Inclusão de jogo.html nas páginas necessárias
+
+// 4. Destinatário do formulário de contato — linha ~629
+const destinatario = 'joaogabrielsabedra@gmail.com';
 ```
 
 ### 💡 Por que esses bugs aconteceram?
