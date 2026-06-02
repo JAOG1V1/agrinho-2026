@@ -78,6 +78,7 @@ Site interativo educacional desenvolvido para o **Concurso Agrinho 2026**, na **
 - [🤝 Como Contribuir](#-como-contribuir)
 - [📜 Licença](#-licença)
 - [📝 Histórico](CHANGELOG.md) _(arquivo separado)_
+- [🔧 Guia de Desenvolvimento](DEVELOPMENT.md) _(arquivo separado)_
 
 ---
 
@@ -177,6 +178,7 @@ Agrinho 2026/
 ├── 🔧 .editorconfig        # Padronização de estilo de código
 ├── 📝 CHANGELOG.md        # Histórico de versões
 ├── 🤝 CONTRIBUTING.md     # Guia de contribuição e padrões de código
+├── 🔧 DEVELOPMENT.md      # Guia de desenvolvimento e arquitetura interna
 └── 📖 README.md           # Este arquivo (documentação)
 ```
 
@@ -986,6 +988,8 @@ O **[CONTRIBUTING.md](./CONTRIBUTING.md)** detalha:
 - 🎯 Prioridades de contribuição e o que evitar
 
 👉 **Leia o guia completo em [CONTRIBUTING.md](./CONTRIBUTING.md)**
+
+Para entender a **arquitetura interna** do projeto (as 27 seções do JavaScript, o sistema de design, as chaves de `localStorage` e como rodar localmente), consulte o **[DEVELOPMENT.md](./DEVELOPMENT.md)**.
 
 ---
 
