@@ -611,6 +611,15 @@ body.tema-escuro .botao-secundario {
     font-weight: 500;
 }
 
+/* Linha de fontes/créditos dos dados estatísticos */
+.fonte-dados {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    opacity: 0.85;
+}
+
 /* ===== CARDS DE PRATICAS ===== */
 .grid-praticas {
     display: grid;
